@@ -1,3 +1,5 @@
+        :PSEUDOCODE:
+
 # Studi Kasus: Konversi Nilai Angka ke Huruf
 
 Deskripsi singkat:
@@ -36,3 +38,64 @@ Contoh alur pengecekan (urutan penting):
 - Periksa validitas input (0–100).
 - Periksa kondisi dari A ke E (dari rentang tertinggi ke terendah) untuk menghindari overlap.
 - Tampilkan hasil.
+
+          :FLOWCHART:
+Flowchart (ASCII) — Konversi Nilai Angka ke Huruf
+
++-------------------------------------+
+|               MULAI                 |
++-------------------------------------+
+                |
+                v
++-------------------------------------+
+| Input: "Masukkan nilai (0-100)"     |
++-------------------------------------+
+                |
+                v
++-------------------------------------+
+| [Keputusan] nilai >= 0 dan <= 100 ? |--No-->+----------------------------------+
++-------------------------------------+       | TAMPILKAN "Nilai tidak valid"  |
+                | Yes                              +----------------------------------+
+                v                                           |
++-------------------------------------+                    v
+| [Keputusan] nilai >= 81 ?           |--Yes-->+-------------------------------+
++-------------------------------------+        | huruf = "A"                   |
+                | No                              +-------------------------------+
+                v                                           |
++-------------------------------------+                    v
+| [Keputusan] nilai >= 71 ?           |--Yes-->+-------------------------------+
++-------------------------------------+        | huruf = "B"                   |
+                | No                              +-------------------------------+
+                v                                           |
++-------------------------------------+                    v
+| [Keputusan] nilai >= 51 ?           |--Yes-->+-------------------------------+
++-------------------------------------+        | huruf = "C"                   |
+                | No                              +-------------------------------+
+                v                                           |
++-------------------------------------+                    v
+| [Keputusan] nilai >= 11 ?           |--Yes-->+-------------------------------+
++-------------------------------------+        | huruf = "D"                   |
+                | No                              +-------------------------------+
+                v                                           |
++-------------------------------------+                    v
+| [Keputusan] nilai >= 0 ?            |--Yes-->+-------------------------------+
++-------------------------------------+        | huruf = "E"                   |
+                | No                              +-------------------------------+
+                v                                           |
++-------------------------------------+                    v
+| TAMPILKAN "Kesalahan tak terduga"   | <---(jatuh ke sini jika ada)      |
++-------------------------------------+                                     
+                |
+                v
++-------------------------------------+
+| TAMPILKAN "Nilai huruf: " + huruf   |
++-------------------------------------+
+                |
+                v
++-------------------------------------+
+|                SELESAI               |
++-------------------------------------+
+
+Catatan:
+- Cek validitas input (0–100) dilakukan sebelum pengecekan rentang huruf.
+- Pengecekan rentang dilakukan dari yang tertinggi ke terendah untuk memastikan nilai masuk ke rentang yang tepat.
