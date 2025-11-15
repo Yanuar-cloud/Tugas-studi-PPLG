@@ -1,0 +1,38 @@
+# Studi Kasus: Konversi Nilai Angka ke Huruf
+
+Deskripsi singkat:
+Mengubah nilai angka (0–100) menjadi nilai huruf berdasarkan ketentuan:
+- A = 81 s/d 100
+- B = 71 s/d 80
+- C = 51 s/d 70
+- D = 11 s/d 50
+- E = 0 s/d 10
+
+Pseudocode:
+1. MULAI
+2. TAMPILKAN "Masukkan nilai (0-100):"
+3. BACA nilai
+4. JIKA nilai < 0 ATAU nilai > 100 MAKA
+     - TAMPILKAN "Nilai tidak valid. Silakan masukkan nilai antara 0 dan 100."
+     - SELESAI
+   SELESAI_JIKA
+5. JIKA nilai >= 81 DAN nilai <= 100 MAKA
+     - huruf <- "A"
+   LAIN_JIKA nilai >= 71 DAN nilai <= 80 MAKA
+     - huruf <- "B"
+   LAIN_JIKA nilai >= 51 DAN nilai <= 70 MAKA
+     - huruf <- "C"
+   LAIN_JIKA nilai >= 11 DAN nilai <= 50 MAKA
+     - huruf <- "D"
+   LAIN_JIKA nilai >= 0  DAN nilai <= 10 MAKA
+     - huruf <- "E"
+   LAIN
+     - huruf <- "Tidak terdefinisi"  // (sebagai pengaman, seharusnya tidak terjadi)
+   SELESAI_JIKA
+6. TAMPILKAN "Nilai huruf: " + huruf
+7. SELESAI
+
+Contoh alur pengecekan (urutan penting):
+- Periksa validitas input (0–100).
+- Periksa kondisi dari A ke E (dari rentang tertinggi ke terendah) untuk menghindari overlap.
+- Tampilkan hasil.
