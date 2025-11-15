@@ -1,0 +1,54 @@
+// 1. Inisialisasi dan Input
+MULAI
+    // Mendefinisikan variabel untuk menyimpan nilai angka
+    DEKLARASI nilaiAngka : INTEGER
+    DEKLARASI nilaiHuruf : STRING
+
+    // Minta pengguna memasukkan nilai angka
+    OUTPUT "Masukkan Nilai Angka (0 s/d 100):"
+    INPUT nilaiAngka
+    
+// 2. Proses Penentuan Nilai Huruf
+    // Cek kondisi dimulai dari rentang tertinggi (A)
+    
+    // Kriteria Nilai A (81 s/d 100)
+    IF (nilaiAngka >= 81 AND nilaiAngka <= 100) THEN
+        nilaiHuruf = "A"
+        
+    // Kriteria Nilai B (71 s/d 80)
+    ELSE IF (nilaiAngka >= 71 AND nilaiAngka <= 80) THEN
+        nilaiHuruf = "B"
+        
+    // Kriteria Nilai C (51 s/d 70)
+    ELSE IF (nilaiAngka >= 51 AND nilaiAngka <= 70) THEN
+        nilaiHuruf = "C"
+        
+    // Kriteria Nilai D (11 s/d 50)
+    ELSE IF (nilaiAngka >= 11 AND nilaiAngka <= 50) THEN
+        nilaiHuruf = "D"
+        
+    // Kriteria Nilai E (0 s/d 10) atau nilai di luar rentang valid
+    ELSE IF (nilaiAngka >= 0 AND nilaiAngka <= 10) THEN
+        nilaiHuruf = "E"
+        
+    // Jika nilai yang dimasukkan di luar rentang 0-100 (misal: -5 atau 105)
+    ELSE
+        nilaiHuruf = "Nilai Tidak Valid"
+        
+    ENDIF
+    
+// 3. Output Hasil
+    // Tampilkan nilai huruf yang telah ditentukan
+    OUTPUT "Nilai Angka: " + nilaiAngka
+    OUTPUT "Nilai Huruf: " + nilaiHuruf
+    
+// 4. Akhir Program
+SELESAI
+
+
+Simbol,Nama Simbol,Fungsi
+Oval (Terminator),Mulai/Selesai,Menandakan titik awal (Mulai) dan titik akhir (Selesai) program.
+Persegi Panjang (Process),Proses,Menandakan aksi atau tugas yang harus dilakukan (seperti inisialisasi i=1 atau penambahan i = i + 1).
+Belah Ketupat (Decision),Keputusan/Kondisi,Menunjukkan titik di mana keputusan dibuat (i <= 10 atau i MOD 2 == 0). Alur program akan bercabang.
+Jajaran Genjang (Input/Output),Masukan/Keluaran,Menandakan operasi input (membaca data) atau operasi output (menampilkan hasil).
+Panah (Flowline),Alur Data,Menunjukkan arah aliran proses.
