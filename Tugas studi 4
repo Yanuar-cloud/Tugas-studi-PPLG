@@ -1,0 +1,81 @@
+     :PSEUDOCODE
+
+ALGORITMA HitungTotalBayar
+DEFINISI
+  total_belanja : real
+  diskon_percent : real
+  nominal_diskon : real
+  total_bayar : real
+
+ALGORITMA
+  TULIS "Masukkan total belanja (Rp): "
+  BACA total_belanja
+
+  // Validasi input (opsional)
+  JIKA total_belanja < 0 MAKA
+    TULIS "Nilai total belanja tidak valid"
+    KELUAR
+  AKHIRJIKA
+
+  // Tentukan persentase diskon sesuai aturan
+  JIKA total_belanja >= 100000 DAN total_belanja <= 300000 MAKA
+    diskon_percent := 10
+  JIKATIDAKJIKA total_belanja >= 300001 DAN total_belanja <= 500000 MAKA
+    diskon_percent := 20
+  JIKA TIDAK
+    JIKA total_belanja > 500000 MAKA
+      diskon_percent := 25
+    JIKA TIDAK
+      diskon_percent := 0
+    AKHIRJIKA
+  AKHIRJIKA
+
+  // Hitung nominal diskon dan total bayar
+  nominal_diskon := ROUND((diskon_percent / 100) * total_belanja)  // dibulatkan ke Rp terdekat
+  total_bayar := total_belanja - nominal_diskon
+
+  // Tampilkan hasil
+  TULIS "Persentase diskon: ", diskon_percent, "%"
+  TULIS "Nominal diskon: Rp ", nominal_diskon
+  TULIS "Total yang harus dibayar: Rp ", total_bayar
+SELESAI
+
+      :FLOWCHART:
+
+// Flowchart diskon belanja (Graphviz DOT)
+digraph Flowchart {
+  rankdir=TB;
+  node [fontname="Helvetica"];
+  start [label="Start", shape=oval];
+  input [label="Input total_belanja", shape=parallelogram];
+  check_neg [label="total_belanja < 0 ?", shape=diamond];
+  invalid [label="Tulis \"Nilai total belanja tidak valid\"", shape=box];
+  check_10 [label="total_belanja >= 100000\nAND total_belanja <= 300000 ?", shape=diamond];
+  check_20 [label="total_belanja >= 300001\nAND total_belanja <= 500000 ?", shape=diamond];
+  check_25 [label="total_belanja > 500000 ?", shape=diamond];
+  set_10 [label="diskon_percent := 10", shape=box];
+  set_20 [label="diskon_percent := 20", shape=box];
+  set_25 [label="diskon_percent := 25", shape=box];
+  set_0  [label="diskon_percent := 0", shape=box];
+  hitung [label="nominal_diskon := round((diskon_percent/100) * total_belanja)\ntotal_bayar := total_belanja - nominal_diskon", shape=box];
+  output [label="Tulis diskon_percent, nominal_diskon,\ntotal_bayar", shape=parallelogram];
+  end [label="End", shape=oval];
+
+  start -> input;
+  input -> check_neg;
+  check_neg -> invalid [label="Ya"];
+  invalid -> end;
+  check_neg -> check_10 [label="Tidak"];
+  check_10 -> set_10 [label="Ya"];
+  check_10 -> check_20 [label="Tidak"];
+  check_20 -> set_20 [label="Ya"];
+  check_20 -> check_25 [label="Tidak"];
+  check_25 -> set_25 [label="Ya"];
+  check_25 -> set_0  [label="Tidak"];
+  set_10 -> hitung;
+  set_20 -> hitung;
+  set_25 -> hitung;
+  set_0  -> hitung;
+  hitung -> output;
+  output -> end;
+}
