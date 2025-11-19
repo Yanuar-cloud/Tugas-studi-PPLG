@@ -1,0 +1,30 @@
+​📁 Persiapan (Instalasi Aplikasi)
+​Pastikan Anda sudah memiliki salah satu program pengarsipan populer terinstal di komputer Anda. Contoh yang umum digunakan adalah:
+​WinRAR (Populer untuk membuat file .rar dan .zip)
+​7-Zip (Gratis dan populer untuk membuat file .zip dan 7z)
+​Jika belum, Anda perlu mengunduh dan menginstalnya terlebih dahulu.
+​💻 Langkah-Langkah Mengarsip File PDF
+​Langkah-langkah ini umumnya sama baik untuk format .zip maupun .rar.
+​1. Temukan File PDF Anda
+​Buka File Explorer (di Windows) atau Finder (di macOS) dan arahkan ke lokasi tempat file PDF yang ingin Anda arsip berada.
+​2. Pilih dan Klik Kanan File
+​Klik kanan pada file PDF tersebut.
+​3. Pilih Opsi Kompresi/Arsip
+​Dari menu konteks yang muncul setelah klik kanan, cari opsi yang berkaitan dengan program pengarsipan Anda.
+​🌟 Jika menggunakan WinRAR:
+​Untuk langsung membuat arsip dengan nama yang sama, pilih: "Add to [nama_file].rar" atau "Add to [nama_file].zip".
+​Untuk mengatur lebih banyak opsi (seperti kata sandi atau format), pilih: "Add to archive..."
+​🌟 Jika menggunakan 7-Zip:
+​Arahkan kursor ke submenu 7-Zip.
+​Untuk langsung membuat arsip ZIP dengan nama yang sama, pilih: "Add to [nama_file].zip".
+​Untuk mengatur opsi, pilih: "Add to archive..."
+​4. Konfigurasi (Jika Memilih "Add to archive...")
+​Jika Anda memilih opsi "Add to archive..." (Langkah 3), sebuah jendela pengaturan akan muncul.
+​Archive name: Anda bisa mengganti nama file arsip di sini.
+​Archive format: Pilih format yang Anda inginkan, yaitu ZIP atau RAR.
+​Compression method: Pilih tingkat kompresi (misalnya, Normal atau Best).
+​Optional: Anda dapat menetapkan kata sandi dengan mengklik tombol "Set password..." (biasanya di WinRAR) atau mencari opsi enkripsi/kata sandi (di 7-Zip).
+​Setelah selesai mengatur, klik tombol OK.
+​5. Selesai!
+​Sekarang, Anda akan melihat sebuah file arsip baru (berformat .zip atau .rar) yang muncul di folder yang sama dengan file PDF asli Anda.
+​File arsip ini sudah berisi file PDF tersebut di dalamnya. Anda dapat membagikan file arsip ini dengan mudah
