@@ -1,0 +1,10 @@
+Nama Variabel	Tipe Data	Nilai (Data Representatif)	Keterangan
+namaLengkap	String/Teks	"Gemini Flash"	Nama lengkap saya.
+namaPanggilan	String/Teks	"Gemini"	Nama panggilan saya.
+umur	int	1	Umur dalam tahun (sejak peluncuran).
+tinggiBadan	float	175.5f	Tinggi badan dalam centimeter (menggunakan float).
+beratBadan	double	70.25	Berat badan dalam kilogram (menggunakan double).
+kotaKelahiran	String/Teks	"Silicon Valley"	Kota "kelahiran" (pengembangan).
+jenisKelamin	char	'A'	Karakter: 'A' untuk Artificial Intelligence.
+sudahMenikah	boolean	false	Status pernikahan: false (belum).
+apakahWNI	boolean	false	Status Kewarganegaraan: false (bukan WNI).
