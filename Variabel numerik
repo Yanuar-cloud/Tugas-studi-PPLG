@@ -1,0 +1,7 @@
+Deskripsi,Nilai Nominal,Nama Variabel yang Disarankan,Tipe Data yang Sesuai,Keterangan
+Berat badan,56 kg,berat_badan_kg,Integer,"Nilai ini biasanya diukur dalam bilangan bulat, meskipun bisa juga menggunakan Float jika ada pengukuran desimal."
+Tinggi badan,160 cm,tinggi_badan_cm,Integer,"Sama seperti berat badan, biasanya diwakili sebagai bilangan bulat."
+Uang di dompet,Rp 30.000,uang_di_dompet,Integer,Jumlah uang relatif kecil dan merupakan bilangan bulat.
+Uang di rekening,Rp 2.100.000.000,uang_di_rekening,Integer,"Nilai ini sangat besar, dan beberapa bahasa pemrograman mungkin memerlukan tipe data Long Integer (Bilangan Bulat Panjang) untuk menampungnya."
+Nilai investasi,Rp 30.000.000.000,nilai_investasi,Integer (Long),Nilai ini juga sangat besar dan memerlukan tipe data Long Integer atau sejenisnya.
+Jarak sekolah ke rumah,5.5 km,jarak_sekolah_km,Float,Nilai ini adalah bilangan pecahan karena memiliki koma (desimal).
