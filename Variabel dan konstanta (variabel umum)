@@ -1,0 +1,5 @@
+Deskripsi,Konsep (Java),Contoh Penugasan Variabel Umum
+Nama Toko,Konstanta (String),"final String NAMA_TOKO = ""Radit's Store"";"
+Harga Pokok,Konstanta (int),final int HARGA_POKOK = 50000;
+Harga Promo,Variabel (int),int harga_promo = HARGA_POKOK - 10000;
+Harga Reseller,Variabel (int),int harga_reseller = HARGA_POKOK - 20000;
