@@ -1,0 +1,53 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+public class InputBiodataBufferedReader {
+    public static void main(String[] args) throws IOException {
+        
+        // Membuat objek BufferedReader
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Menerima Input Biodata
+        
+        System.out.println("==========================================");
+        System.out.println("        INPUT DATA BIODATA DENGAN BR      ");
+        System.out.println("==========================================");
+        
+        // Input Nama Sekolah (String)
+        System.out.print("Masukkan Nama Sekolah Anda: ");
+        String namaSekolah = br.readLine(); // Membaca seluruh baris sebagai String
+        
+        // Input Jarak Rumah ke Sekolah (double)
+        System.out.print("Masukkan Jarak Rumah ke Sekolah (Contoh: 10.5): ");
+        String inputJarak = br.readLine();
+
+        // Konversi String menjadi tipe data double
+        double jarakRumahSekolah = Double.parseDouble(inputJarak);
+        
+        // Input Kode Plat Nomor Kendaraan (char)
+        System.out.print("Masukkan Kode Plat Nomor Kendaraan (Contoh: N): ");
+        String inputPlat = br.readLine();
+
+        // Mengambil karakter pertama dari String yang diinput
+        char kodePlat = inputPlat.charAt(0);
+        
+        // Input Anak Ke Berapa (int)
+        System.out.print("Masukkan Anda Anak Ke Berapa: ");
+        String inputAnakKe = br.readLine();
+
+        // Konversi String menjadi tipe data int
+        int anakKeBerapa = Integer.parseInt(inputAnakKe);
+      
+        // Menampilkan Output Biodata
+        
+        System.out.println("\n==========================================");
+        System.out.println("           OUTPUT BIODATA ANDA            ");
+        System.out.println("==========================================");
+        System.out.println("Nama Sekolah          : " + namaSekolah);
+        System.out.println("Jarak Rumah ke Sekolah: " + jarakRumahSekolah + " km");
+        System.out.println("Kode Plat Nomor       : " + kodePlat);
+        System.out.println("Anak Ke Berapa        : " + anakKeBerapa);
+        System.out.println("==========================================");
+    }
+}
