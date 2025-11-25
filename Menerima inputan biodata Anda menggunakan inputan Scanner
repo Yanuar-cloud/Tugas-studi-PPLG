@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Tugas1 {
+
+    public static void main(String[] args) {
+        
+        // Membuat objek Scanner untuk membaca input
+        Scanner input = new Scanner(System.in);
+        
+        // Menerima Input Biodata
+        
+        System.out.println("==========================================");
+        System.out.println("          INPUT DATA BIODATA ANDA         ");
+        System.out.println("==========================================");
+        
+        // Input Nama Lengkap (String)
+        System.out.print("Masukkan Nama Lengkap Anda: ");
+        String namaLengkap = input.nextLine(); // Menggunakan nextLine() untuk menerima spasi
+        
+        // Input Usia (Integer)
+        System.out.print("Masukkan Usia Anda (Tahun): ");
+        int usia = input.nextInt(); 
+        
+        input.nextLine(); 
+        
+        // Input Kota Asal (String)
+        System.out.print("Masukkan Kota Asal Anda: ");
+        String kotaAsal = input.nextLine(); 
+        
+        //  Input Tinggi Badan (Desimal/Double)
+        System.out.print("Masukkan Tinggi Badan Anda (Contoh: 160.0): ");
+        double tinggiBadan = input.nextDouble(); 
+        
+        // Menutup objek Scanner setelah selesai digunakan
+        input.close(); 
+        
+        // Menampilkan Output Biodata
+        
+        System.out.println("\n==========================================");
+        System.out.println("            OUTPUT BIODATA ANDA           ");
+        System.out.println("==========================================");
+        System.out.println("Nama Lengkap  : " + namaLengkap);
+        System.out.println("Usia          : " + usia + " Tahun");
+        System.out.println("Kota Asal     : " + kotaAsal);
+        System.out.println("Tinggi Badan  : " + tinggiBadan + " cm");
+        System.out.println("==========================================");
+    }
+}
