@@ -1,0 +1,50 @@
+
+// --- Menerima Input dari Pengguna ---
+
+let jenisKelamin;
+let nomorSepatuStr;
+let nomorSepatuInt;
+let sudahMenikahInput;
+let sudahMenikahBool;
+
+// 1. Input Jenis Kelamin (String)
+jenisKelamin = prompt("Masukkan Jenis Kelamin (e.g., Laki-Laki/Perempuan):");
+
+// 2. Input Nomor Sepatu (Int)
+// Karena prompt mengembalikan string, kita perlu mengkonversinya ke integer.
+while (true) {
+    nomorSepatuStr = prompt("Masukkan Nomor Sepatu (hanya angka):");
+    
+    // Mengecek apakah input adalah angka yang valid dan tidak null/kosong
+    nomorSepatuInt = parseInt(nomorSepatuStr);
+    
+    if (!isNaN(nomorSepatuInt) && nomorSepatuStr !== null && nomorSepatuStr.trim() !== "") {
+        break; // Keluar dari loop jika input valid
+    } else {
+        alert("Input salah. Nomor sepatu harus berupa angka.");
+    }
+}
+
+// 3. Input Status Menikah (Boolean)
+while (true) {
+    sudahMenikahInput = prompt("Sudah Menikah? (Ketik 'ya' atau 'tidak'):").toLowerCase();
+    
+    if (sudahMenikahInput === 'ya') {
+        sudahMenikahBool = true;
+        break;
+    } else if (sudahMenikahInput === 'tidak') {
+        sudahMenikahBool = false;
+        break;
+    } else {
+        alert("Input salah. Harap masukkan 'ya' atau 'tidak'.");
+    }
+}
+
+
+// --- Menampilkan Output dari Inputan ---
+
+console.log("\n--- Output Biodata Anda ---");
+console.log(`Jenis Kelamin: ${jenisKelamin} (Tipe Data: ${typeof jenisKelamin})`);
+console.log(`Nomor Sepatu: ${nomorSepatuInt} (Tipe Data: ${typeof nomorSepatuInt})`);
+console.log(`Sudah Menikah?: ${sudahMenikahBool} (Tipe Data: ${typeof sudahMenikahBool})`);
+console.log("--------------------------");
