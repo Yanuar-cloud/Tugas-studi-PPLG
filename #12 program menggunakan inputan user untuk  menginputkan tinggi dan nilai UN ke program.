@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class SeleksiPegawai {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("========================================");
+        System.out.println("     PROGRAM SELEKSI CALON PEGAWAI     ");
+        System.out.println("========================================");
+        System.out.println("Syarat:");
+        System.out.println("1. Tinggi badan minimal 160 cm");
+        System.out.println("2. Nilai UN minimal 80");
+        System.out.println("========================================\n");
+        
+        // Input tinggi badan
+        System.out.print("Masukkan tinggi badan (cm): ");
+        double tinggi = input.nextDouble();
+        
+        // Input nilai UN
+        System.out.print("Masukkan nilai UN: ");
+        double nilaiUN = input.nextDouble();
+        
+        // Menutup Scanner
+        input.close();
+        
+        // Menentukan kelayakan dengan operator logika AND (&&)
+        boolean memenuhiSyarat = (tinggi >= 160) && (nilaiUN >= 80);
+        
+        // Menampilkan hasil
+        System.out.println("\n========================================");
+        System.out.println("            HASIL SELEKSI              ");
+        System.out.println("========================================");
+        System.out.printf("Tinggi badan     : %.1f cm\n", tinggi);
+        System.out.printf("Nilai UN         : %.1f\n", nilaiUN);
+        System.out.println("----------------------------------------");
+        System.out.println("Analisis persyaratan:");
+        
+        // Analisis detail
+        boolean syaratTinggi = tinggi >= 160;
+        boolean syaratNilai = nilaiUN >= 80;
+        
+        System.out.println("1. Tinggi ≥ 160 cm? " + syaratTinggi + 
+                          " (" + tinggi + " " + (syaratTinggi ? "≥" : "<") + " 160)");
+        System.out.println("2. Nilai UN ≥ 80?   " + syaratNilai + 
+                          " (" + nilaiUN + " " + (syaratNilai ? "≥" : "<") + " 80)");
+        System.out.println("----------------------------------------");
+        System.out.println("Kedua syarat terpenuhi? " + 
+                          (syaratTinggi && syaratNilai ? "YA" : "TIDAK"));
+        System.out.println("========================================");
+        System.out.println("Status kelayakan: " + memenuhiSyarat);
+        System.out.println("Keterangan: " + 
+                          (memenuhiSyarat ? "LOLOS SELEKSI" : "TIDAK LOLOS SELEKSI"));
+        System.out.println("========================================");
+    }
+}
