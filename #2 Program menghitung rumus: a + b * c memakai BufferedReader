@@ -1,0 +1,85 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+public class HitungRumusDetail {
+    public static void main(String[] args) {
+        BufferedReader br = null;
+        
+        try {
+            br = new BufferedReader(new InputStreamReader(System.in));
+            
+            System.out.println("==========================================");
+            System.out.println("     PROGRAM PERHITUNGAN RUMUS MATEMATIKA");
+            System.out.println("            Rumus: a + b × c");
+            System.out.println("==========================================\n");
+            
+            // Input nilai dengan validasi
+            double[] nilai = new double[3];
+            String[] variabel = {"a", "b", "c"};
+            
+            for (int i = 0; i < 3; i++) {
+                boolean valid = false;
+                while (!valid) {
+                    try {
+                        System.out.print("Masukkan nilai " + variabel[i] + ": ");
+                        String inputStr = br.readLine().trim();
+                        
+                        // Cek jika input kosong
+                        if (inputStr.isEmpty()) {
+                            System.out.println("Error: Nilai tidak boleh kosong!");
+                            continue;
+                        }
+                        
+                        nilai[i] = Double.parseDouble(inputStr);
+                        valid = true;
+                        
+                    } catch (NumberFormatException e) {
+                        System.out.println("Error: Masukkan harus berupa angka yang valid!");
+                    }
+                }
+            }
+            
+            double a = nilai[0];
+            double b = nilai[1];
+            double c = nilai[2];
+            
+            // Proses perhitungan
+            System.out.println("\n==========================================");
+            System.out.println("        PROSES PERHITUNGAN");
+            System.out.println("==========================================");
+            
+            // Langkah 1: Hitung perkalian b × c
+            double hasilKali = b * c;
+            System.out.printf("Langkah 1: b × c = %.2f × %.2f = %.2f\n", b, c, hasilKali);
+            
+            // Langkah 2: Hitung penjumlahan a + (b × c)
+            double hasilAkhir = a + hasilKali;
+            System.out.printf("Langkah 2: a + (b × c) = %.2f + %.2f = %.2f\n", a, hasilKali, hasilAkhir);
+            
+            // Tampilkan kesimpulan
+            System.out.println("\n==========================================");
+            System.out.println("             KESIMPULAN");
+            System.out.println("==========================================");
+            System.out.println("Berdasarkan aturan matematika:");
+            System.out.println("1. Perkalian (×) memiliki prioritas lebih tinggi daripada penjumlahan (+)");
+            System.out.println("2. Operasi b × c dikerjakan terlebih dahulu");
+            System.out.println("3. Hasil perkalian kemudian ditambahkan dengan a");
+            System.out.println("\nRumus: a + b × c");
+            System.out.printf("Nilai: %.2f + %.2f × %.2f\n", a, b, c);
+            System.out.printf("Hasil: %.2f\n", hasilAkhir);
+            System.out.println("==========================================");
+            
+        } catch (IOException e) {
+            System.out.println("Terjadi kesalahan I/O: " + e.getMessage());
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    System.out.println("Error menutup BufferedReader: " + e.getMessage());
+                }
+            }
+        }
+    }
+}
