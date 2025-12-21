@@ -1,0 +1,65 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class LuasSegitigaValidasi {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double alas = 0, tinggi = 0;
+        boolean inputValid = false;
+        
+        System.out.println("=================================");
+        System.out.println("   PROGRAM MENGHITUNG LUAS");
+        System.out.println("           SEGITIGA");
+        System.out.println("=================================\n");
+        
+        // Input alas dengan validasi
+        while (!inputValid) {
+            try {
+                System.out.print("Masukkan panjang alas segitiga (dalam cm): ");
+                alas = input.nextDouble();
+                
+                if (alas <= 0) {
+                    System.out.println("Error: Alas harus lebih besar dari 0!");
+                    continue;
+                }
+                inputValid = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Masukkan harus berupa angka!");
+                input.next(); // Clear invalid input
+            }
+        }
+        
+        inputValid = false; // Reset untuk input tinggi
+        
+        // Input tinggi dengan validasi
+        while (!inputValid) {
+            try {
+                System.out.print("Masukkan tinggi segitiga (dalam cm): ");
+                tinggi = input.nextDouble();
+                
+                if (tinggi <= 0) {
+                    System.out.println("Error: Tinggi harus lebih besar dari 0!");
+                    continue;
+                }
+                inputValid = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Masukkan harus berupa angka!");
+                input.next(); // Clear invalid input
+            }
+        }
+        
+        input.close();
+        
+        // Menghitung luas segitiga
+        double luas = 0.5 * alas * tinggi;
+        
+        // Menampilkan hasil
+        System.out.println("\n=================================");
+        System.out.println("            HASIL");
+        System.out.println("=================================");
+        System.out.printf("Alas segitiga    : %.2f cm\n", alas);
+        System.out.printf("Tinggi segitiga  : %.2f cm\n", tinggi);
+        System.out.printf("Luas segitiga    : %.2f cm²\n", luas);
+        System.out.println("=================================");
+    }
+}
