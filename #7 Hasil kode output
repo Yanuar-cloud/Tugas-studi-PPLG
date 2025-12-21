@@ -1,0 +1,9 @@
+Nilai a = 10
+Nilai b = 15
+
+a == b ? false
+a != b ? true
+a > b ? false
+a < b ? true
+a >= b ? false
+a <= b ? true
