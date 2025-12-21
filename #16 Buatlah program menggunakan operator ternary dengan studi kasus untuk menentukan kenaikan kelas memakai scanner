@@ -1,0 +1,176 @@
+import java.util.Scanner;
+
+public class KenaikanKelasTernary {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("╔══════════════════════════════════════════════════════╗");
+        System.out.println("║          PROGRAM PENENTUAN KENAIKAN KELAS            ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        System.out.println("║  Syarat Naik Kelas:                                  ║");
+        System.out.println("║  1. Nilai akademik > 70                              ║");
+        System.out.println("║  2. Ketidakhadiran < 10 hari                         ║");
+        System.out.println("║                                                      ║");
+        System.out.println("║  Keterangan:                                         ║");
+        System.out.println("║  - Gunakan 'ya' untuk jawaban YA                     ║");
+        System.out.println("║  - Gunakan 'tidak' untuk jawaban TIDAK               ║");
+        System.out.println("╚══════════════════════════════════════════════════════╝\n");
+        
+        System.out.println("Jawab pertanyaan dengan memasukkan (ya) atau (tidak)");
+        System.out.println("======================================================");
+        
+        // Pertanyaan 1: Nilai akademik
+        System.out.print("Apakah nilai akademik kamu lebih dari 70? ");
+        String jawabanNilai = input.nextLine().toLowerCase().trim();
+        
+        // Validasi input pertanyaan 1
+        while (!jawabanNilai.equals("ya") && !jawabanNilai.equals("tidak")) {
+            System.out.println("Input tidak valid! Hanya masukkan 'ya' atau 'tidak'");
+            System.out.print("Apakah nilai akademik kamu lebih dari 70? ");
+            jawabanNilai = input.nextLine().toLowerCase().trim();
+        }
+        
+        // Pertanyaan 2: Ketidakhadiran
+        System.out.print("Apakah ketidakhadiran kamu selama 1 semester kurang dari 10? ");
+        String jawabanAbsen = input.nextLine().toLowerCase().trim();
+        
+        // Validasi input pertanyaan 2
+        while (!jawabanAbsen.equals("ya") && !jawabanAbsen.equals("tidak")) {
+            System.out.println("Input tidak valid! Hanya masukkan 'ya' atau 'tidak'");
+            System.out.print("Apakah ketidakhadiran kamu selama 1 semester kurang dari 10? ");
+            jawabanAbsen = input.nextLine().toLowerCase().trim();
+        }
+        
+        input.close();
+        
+        System.out.println("\n════════════════════════════════════════════════════════");
+        System.out.println("                    ANALISIS HASIL                       ");
+        System.out.println("════════════════════════════════════════════════════════");
+        
+        // Konversi jawaban ke boolean
+        boolean nilaiMemuaskan = jawabanNilai.equals("ya");
+        boolean absenBaik = jawabanAbsen.equals("ya");
+        
+        // ==============================================
+        // PENGGUNAAN OPERATOR TERNARY UTAMA
+        // ==============================================
+        
+        // 1. TERNARY untuk menentukan apakah naik kelas
+        String statusNaikKelas = (nilaiMemuaskan && absenBaik) ? "NAIK KELAS" : "TIDAK NAIK KELAS";
+        
+        // 2. TERNARY untuk pesan motivasi berdasarkan nilai
+        String pesanNilai = nilaiMemuaskan ? 
+            "✓ Nilai akademik memenuhi syarat" : 
+            "✗ Nilai akademik tidak memenuhi syarat";
+        
+        // 3. TERNARY untuk pesan absensi
+        String pesanAbsen = absenBaik ? 
+            "✓ Kehadiran memenuhi syarat" : 
+            "✗ Kehadiran tidak memenuhi syarat";
+        
+        // 4. TERNARY untuk pesan akhir (lebih kompleks)
+        String pesanAkhir = (nilaiMemuaskan && absenBaik) ? 
+            "Selamat kamu naik kelas... :)\nPertahankan nilaimu" :
+            (nilaiMemuaskan && !absenBaik) ? 
+                "Semangat belajar lagi\nPertahankan nilaimu" :
+                (!nilaiMemuaskan && absenBaik) ? 
+                    "Semangat belajar lagi\nTingkatkan kedisiplinan hadir" :
+                    "Semangat belajar lagi\nMaaf, kamu tidak naik kelas";
+        
+        // Menampilkan hasil analisis
+        System.out.println("Hasil Evaluasi:");
+        System.out.println("1. Nilai Akademik > 70: " + 
+                          (nilaiMemuaskan ? "YA" : "TIDAK") + 
+                          " → " + pesanNilai);
+        System.out.println("2. Absensi < 10 hari: " + 
+                          (absenBaik ? "YA" : "TIDAK") + 
+                          " → " + pesanAbsen);
+        
+        System.out.println("\nLogika Penentuan:");
+        System.out.println("Kondisi: nilaiBaik && absenBaik");
+        System.out.println("Formula: " + nilaiMemuaskan + " && " + absenBaik + 
+                          " = " + (nilaiMemuaskan && absenBaik));
+        
+        System.out.println("\n════════════════════════════════════════════════════════");
+        System.out.println("                   HASIL AKHIR                          ");
+        System.out.println("════════════════════════════════════════════════════════");
+        System.out.println("Status: " + statusNaikKelas);
+        System.out.println("\n" + pesanAkhir);
+        System.out.println("════════════════════════════════════════════════════════");
+        
+        // ==============================================
+        // PENJELASAN DETAIL OPERATOR TERNARY
+        // ==============================================
+        System.out.println("\n╔══════════════════════════════════════════════════════╗");
+        System.out.println("║         PENJELASAN OPERATOR TERNARY                 ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        System.out.println("║ Struktur: kondisi ? nilai_jika_true : nilai_jika_false ║");
+        System.out.println("║                                                      ║");
+        System.out.println("║ Contoh dalam program ini:                            ║");
+        System.out.println("║                                                      ║");
+        System.out.println("║ 1. statusNaikKelas = (nilaiMemuaskan && absenBaik)   ║");
+        System.out.println("║                       ? \"NAIK KELAS\"                ║");
+        System.out.println("║                       : \"TIDAK NAIK KELAS\";         ║");
+        System.out.println("║                                                      ║");
+        System.out.println("║ 2. pesanNilai = nilaiMemuaskan                       ║");
+        System.out.println("║                     ? \"✓ Nilai akademik memenuhi...\"║");
+        System.out.println("║                     : \"✗ Nilai akademik tidak...\";  ║");
+        System.out.println("║                                                      ║");
+        System.out.println("║ 3. Nested Ternary (ternary bersarang):               ║");
+        System.out.println("║    pesanAkhir = (kondisi1) ? nilai1 :                ║");
+        System.out.println("║               (kondisi2) ? nilai2 :                  ║");
+        System.out.println("║               (kondisi3) ? nilai3 : nilai4;          ║");
+        System.out.println("╚══════════════════════════════════════════════════════╝");
+        
+        // ==============================================
+        // TABEL KEBENARAN UNTUK KASUS INI
+        // ==============================================
+        System.out.println("\n════════════════════════════════════════════════════════");
+        System.out.println("            TABEL KEPUTUSAN KENAIKAN KELAS              ");
+        System.out.println("════════════════════════════════════════════════════════");
+        System.out.println("┌─────────────┬─────────────┬─────────────┬────────────────────┐");
+        System.out.println("│ Nilai > 70  │ Absen < 10  │ Operator && │     Keputusan      │");
+        System.out.println("├─────────────┼─────────────┼─────────────┼────────────────────┤");
+        
+        // Baris 1: true && true
+        System.out.printf("│ %-11s │ %-11s │ %-11s │ %-18s │\n", 
+                         "YA", "YA", "true", "NAIK KELAS");
+        
+        // Baris 2: true && false
+        System.out.printf("│ %-11s │ %-11s │ %-11s │ %-18s │\n", 
+                         "YA", "TIDAK", "false", "TIDAK NAIK KELAS");
+        
+        // Baris 3: false && true
+        System.out.printf("│ %-11s │ %-11s │ %-11s │ %-18s │\n", 
+                         "TIDAK", "YA", "false", "TIDAK NAIK KELAS");
+        
+        // Baris 4: false && false
+        System.out.printf("│ %-11s │ %-11s │ %-11s │ %-18s │\n", 
+                         "TIDAK", "TIDAK", "false", "TIDAK NAIK KELAS");
+        
+        System.out.println("└─────────────┴─────────────┴─────────────┴────────────────────┘");
+        
+        // ==============================================
+        // CONTOH ALTERNATIF DENGAN IF-ELSE
+        // ==============================================
+        System.out.println("\n════════════════════════════════════════════════════════");
+        System.out.println("     PERBANDINGAN: TERNARY vs IF-ELSE                   ");
+        System.out.println("════════════════════════════════════════════════════════");
+        
+        System.out.println("Kode dengan TERNARY:");
+        System.out.println("String status = (nilaiBaik && absenBaik) ? \"NAIK\" : \"TIDAK\";");
+        
+        System.out.println("\nKode dengan IF-ELSE:");
+        System.out.println("String status;");
+        System.out.println("if (nilaiBaik && absenBaik) {");
+        System.out.println("    status = \"NAIK\";");
+        System.out.println("} else {");
+        System.out.println("    status = \"TIDAK\";");
+        System.out.println("}");
+        
+        System.out.println("\nKeuntungan Ternary:");
+        System.out.println("1. Lebih singkat untuk kondisi sederhana");
+        System.out.println("2. Dapat digunakan dalam ekspresi assignment");
+        System.out.println("3. Membuat kode lebih compact");
+    }
+}
