@@ -1,0 +1,14 @@
+boolean x = true;
+boolean y = false;
+
+// Operator NOT sederhana
+System.out.println(!x);     // false
+System.out.println(!y);     // true
+
+// Double negation (negasi ganda)
+System.out.println(!!x);    // true (!false = true)
+System.out.println(!!y);    // false (!true = false)
+
+// Kombinasi dengan operator lain
+System.out.println(!(x && y));  // !(true && false) = !false = true
+System.out.println(!(x || y));  // !(true || false) = !true = false
