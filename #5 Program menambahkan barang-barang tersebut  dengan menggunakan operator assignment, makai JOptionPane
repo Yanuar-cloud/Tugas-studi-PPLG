@@ -1,0 +1,91 @@
+import javax.swing.JOptionPane;
+
+public class TambahBarangMinimarket {
+    public static void main(String[] args) {
+        // Stok awal barang di minimarket
+        int sirup = 5;
+        int deterjen = 6;
+        int mieInstan = 10;
+        
+        // Menampilkan stok awal
+        String stokAwal = "=== STOK AWAL BARANG MINIMARKET ===\n\n" +
+                         "1. Sirup     : " + sirup + " botol\n" +
+                         "2. Deterjen  : " + deterjen + " bungkus\n" +
+                         "3. Mie Instan: " + mieInstan + " bungkus\n" +
+                         "===================================\n";
+        
+        JOptionPane.showMessageDialog(null, stokAwal, 
+                                     "Stok Awal", JOptionPane.INFORMATION_MESSAGE);
+        
+        // Input penambahan barang dari distributor menggunakan JOptionPane
+        String inputSirup = JOptionPane.showInputDialog(null,
+            "Masukkan jumlah Sirup yang ditambahkan distributor:",
+            "Input Penambahan Barang",
+            JOptionPane.QUESTION_MESSAGE);
+        
+        String inputDeterjen = JOptionPane.showInputDialog(null,
+            "Masukkan jumlah Deterjen yang ditambahkan distributor:",
+            "Input Penambahan Barang",
+            JOptionPane.QUESTION_MESSAGE);
+        
+        String inputMie = JOptionPane.showInputDialog(null,
+            "Masukkan jumlah Mie Instan yang ditambahkan distributor:",
+            "Input Penambahan Barang",
+            JOptionPane.QUESTION_MESSAGE);
+        
+        // Validasi input
+        if (inputSirup == null || inputDeterjen == null || inputMie == null ||
+            inputSirup.trim().isEmpty() || inputDeterjen.trim().isEmpty() || inputMie.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, 
+                "Semua data penambahan harus diisi!", 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        try {
+            // Konversi input ke integer
+            int tambahSirup = Integer.parseInt(inputSirup.trim());
+            int tambahDeterjen = Integer.parseInt(inputDeterjen.trim());
+            int tambahMie = Integer.parseInt(inputMie.trim());
+            
+            // Validasi input tidak negatif
+            if (tambahSirup < 0 || tambahDeterjen < 0 || tambahMie < 0) {
+                JOptionPane.showMessageDialog(null,
+                    "Jumlah penambahan tidak boleh negatif!",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            // PROSES PENAMBAHAN DENGAN OPERATOR ASSIGNMENT
+            String proses = "=== PROSES PENAMBAHAN STOK ===\n\n";
+            
+            // Sirup: menggunakan operator assignment +=
+            proses += "1. SIRUP:\n";
+            proses += "   Stok awal: " + sirup + " botol\n";
+            proses += "   Ditambahkan: " + tambahSirup + " botol\n";
+            sirup += tambahSirup; // Operator assignment: sirup = sirup + tambahSirup
+            proses += "   Operator: sirup += " + tambahSirup + "\n";
+            proses += "   Stok akhir: " + sirup + " botol\n\n";
+            
+            // Deterjen: menggunakan operator assignment +=
+            proses += "2. DETERJEN:\n";
+            proses += "   Stok awal: " + deterjen + " bungkus\n";
+            proses += "   Ditambahkan: " + tambahDeterjen + " bungkus\n";
+            deterjen += tambahDeterjen; // Operator assignment: deterjen = deterjen + tambahDeterjen
+            proses += "   Operator: deterjen += " + tambahDeterjen + "\n";
+            proses += "   Stok akhir: " + deterjen + " bungkus\n\n";
+            
+            // Mie Instan: menggunakan operator assignment +=
+            proses += "3. MIE INSTAN:\n";
+            proses += "   Stok awal: " + mieInstan + " bungkus\n";
+            proses += "   Ditambahkan: " + tambahMie + " bungkus\n";
+            mieInstan += tambahMie; // Operator assignment: mieInstan = mieInstan + tambahMie
+            proses += "   Operator: mieInstan += " + tambahMie + "\n";
+            proses += "   Stok akhir: " + mieInstan + " bungkus\n";
+            
+            // Menampilkan proses penambahan
+            JOptionPane.showMessageDialog(null, proses,
+                                        "Proses Penambahan",
+                                        JOptionPane.INFORMATION
