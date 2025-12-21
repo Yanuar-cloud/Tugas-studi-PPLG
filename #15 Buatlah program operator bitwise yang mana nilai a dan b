@@ -1,0 +1,136 @@
+import java.util.Scanner;
+
+public class OperatorBitwiseDetail {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("╔══════════════════════════════════════════════════════╗");
+        System.out.println("║             PROGRAM OPERATOR BITWISE JAVA            ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        System.out.println("║ Operator Bitwise bekerja pada level bit (0 dan 1)   ║");
+        System.out.println("║ Setiap bilangan direpresentasikan dalam bentuk biner║");
+        System.out.println("╚══════════════════════════════════════════════════════╝\n");
+        
+        // Input nilai
+        System.out.print("Masukkan nilai pertama (a): ");
+        int a = scanner.nextInt();
+        
+        System.out.print("Masukkan nilai kedua   (b): ");
+        int b = scanner.nextInt();
+        
+        scanner.close();
+        
+        // Konversi ke biner untuk keperluan display
+        String binerA = Integer.toBinaryString(a);
+        String binerB = Integer.toBinaryString(b);
+        
+        // LEFT SHIFT: a << 2
+        int leftShiftResult = a << 2;
+        String binerLeftShift = Integer.toBinaryString(leftShiftResult);
+        
+        // RIGHT SHIFT: b >> 2
+        int rightShiftResult = b >> 2;
+        String binerRightShift = Integer.toBinaryString(rightShiftResult);
+        
+        // Menampilkan hasil dengan detail
+        System.out.println("\n╔══════════════════════════════════════════════════════╗");
+        System.out.println("║                  HASIL PERHITUNGAN                   ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        
+        // Menampilkan nilai awal
+        System.out.printf("║ Nilai a: %-10d | Biner: %-32s ║\n", a, binerA);
+        System.out.printf("║ Nilai b: %-10d | Biner: %-32s ║\n", b, binerB);
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        
+        // 1. LEFT SHIFT OPERATION
+        System.out.println("║             OPERASI LEFT SHIFT (a << 2)             ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        System.out.println("║ Konsep: Menggeser semua bit ke kiri sebanyak 2 posisi║");
+        System.out.println("║ Rumus : a << n = a × 2ⁿ                              ║");
+        System.out.printf("║ Contoh: %d << 2 = %d × 2² = %d × 4 = %-16d ║\n", 
+                         a, a, a, leftShiftResult);
+        System.out.printf("║ Hasil : %-43d ║\n", leftShiftResult);
+        System.out.printf("║ Biner : %-43s ║\n", binerLeftShift);
+        System.out.println("║                                                      ║");
+        System.out.println("║ Visualisasi:                                         ║");
+        System.out.printf("║   a (desimal): %d                                      ║\n", a);
+        System.out.printf("║   a (biner)  : %s                                      ║\n", 
+                         padBiner(binerA, 32));
+        System.out.printf("║   a << 2     : %s                                      ║\n", 
+                         padBiner(binerLeftShift, 32));
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        
+        // 2. RIGHT SHIFT OPERATION
+        System.out.println("║            OPERASI RIGHT SHIFT (b >> 2)             ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        System.out.println("║ Konsep: Menggeser semua bit ke kanan sebanyak 2 posisi║");
+        System.out.println("║ Rumus : b >> n = b ÷ 2ⁿ (pembagian integer)          ║");
+        System.out.printf("║ Contoh: %d >> 2 = %d ÷ 2² = %d ÷ 4 = %-16d ║\n", 
+                         b, b, b, rightShiftResult);
+        System.out.printf("║ Hasil : %-43d ║\n", rightShiftResult);
+        System.out.printf("║ Biner : %-43s ║\n", binerRightShift);
+        System.out.println("║                                                      ║");
+        System.out.println("║ Visualisasi:                                         ║");
+        System.out.printf("║   b (desimal): %d                                      ║\n", b);
+        System.out.printf("║   b (biner)  : %s                                      ║\n", 
+                         padBiner(binerB, 32));
+        System.out.printf("║   b >> 2     : %s                                      ║\n", 
+                         padBiner(binerRightShift, 32));
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        
+        // Bonus: Operator bitwise lainnya
+        System.out.println("║          OPERATOR BITWISE LAINNYA (BONUS)           ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        
+        // AND
+        int andResult = a & b;
+        System.out.printf("║ AND (&)  : %d & %d = %-31d ║\n", a, b, andResult);
+        
+        // OR
+        int orResult = a | b;
+        System.out.printf("║ OR (|)   : %d | %d = %-31d ║\n", a, b, orResult);
+        
+        // XOR
+        int xorResult = a ^ b;
+        System.out.printf("║ XOR (^)  : %d ^ %d = %-31d ║\n", a, b, xorResult);
+        
+        // NOT
+        int notA = ~a;
+        int notB = ~b;
+        System.out.printf("║ NOT (~a) : ~%d = %-35d ║\n", a, notA);
+        System.out.printf("║ NOT (~b) : ~%d = %-35d ║\n", b, notB);
+        
+        System.out.println("╚══════════════════════════════════════════════════════╝");
+        
+        // Contoh penggunaan praktis
+        System.out.println("\n════════════════════════════════════════════════════════");
+        System.out.println("CONTOH PENGGUNAAN PRAKTIS OPERATOR BITWISE:");
+        System.out.println("════════════════════════════════════════════════════════");
+        System.out.println("1. Mengecek bilangan genap/ganjil:");
+        System.out.println("   - Genap: (a & 1) == 0");
+        System.out.printf("   - %d & 1 = %d → %s\n", 
+                        a, (a & 1), ((a & 1) == 0 ? "GENAP" : "GANJIL"));
+        
+        System.out.println("\n2. Menggandakan nilai (left shift):");
+        System.out.println("   - a << 1 = a × 2");
+        System.out.printf("   - %d << 1 = %d (setara %d × 2)\n", a, (a << 1), a);
+        
+        System.out.println("\n3. Membagi dua nilai (right shift):");
+        System.out.println("   - b >> 1 = b ÷ 2 (integer division)");
+        System.out.printf("   - %d >> 1 = %d (setara %d ÷ 2)\n", b, (b >> 1), b);
+        System.out.println("════════════════════════════════════════════════════════");
+    }
+    
+    // Method untuk padding biner dengan panjang tertentu
+    private static String padBiner(String biner, int length) {
+        if (biner.length() >= length) {
+            return biner;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < length - biner.length(); i++) {
+            sb.append('0');
+        }
+        sb.append(biner);
+        return sb.toString();
+    }
+}
