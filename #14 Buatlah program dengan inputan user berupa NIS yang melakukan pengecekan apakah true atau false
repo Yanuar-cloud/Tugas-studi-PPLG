@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class CekKelulusanSiswa {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        // Data NIS siswa yang lulus
+        int[] nisLulus = {1001, 1002, 1003, 1004};
+        
+        System.out.println("======================================");
+        System.out.println("     PROGRAM CEK KELULUSAN SISWA     ");
+        System.out.println("======================================");
+        System.out.println("Data siswa yang LULUS:");
+        for (int i = 0; i < nisLulus.length; i++) {
+            System.out.println((i + 1) + ". " + nisLulus[i]);
+        }
+        System.out.println("======================================\n");
+        
+        // Input NIS dari user
+        System.out.print("Masukkan NIS yang akan dicek: ");
+        int nisInput;
+        
+        // Validasi input harus angka
+        try {
+            nisInput = Integer.parseInt(input.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("\n======================================");
+            System.out.println("ERROR: Input harus berupa angka!");
+            System.out.println("======================================");
+            input.close();
+            return;
+        }
+        
+        input.close();
+        
+        // Pengecekan kelulusan
+        boolean lulus = false;
+        
+        // Menggunakan operator logika OR (||) untuk mengecek semua kemungkinan
+        lulus = (nisInput == nisLulus[0]) || 
+                (nisInput == nisLulus[1]) || 
+                (nisInput == nisLulus[2]) || 
+                (nisInput == nisLulus[3]);
+        
+        // Alternatif: menggunakan perulangan for
+        // for (int nis : nisLulus) {
+        //     if (nisInput == nis) {
+        //         lulus = true;
+        //         break;
+        //     }
+        // }
+        
+        // Menampilkan hasil
+        System.out.println("\n======================================");
+        System.out.println("            HASIL CEK                ");
+        System.out.println("======================================");
+        System.out.println("NIS yang diinput: " + nisInput);
+        System.out.println("--------------------------------------");
+        System.out.println("Proses pengecekan:");
+        
+        // Menampilkan proses pengecekan detail
+        System.out.println("nisInput == 1001? " + (nisInput == nisLulus[0]));
+        System.out.println("nisInput == 1002? " + (nisInput == nisLulus[1]));
+        System.out.println("nisInput == 1003? " + (nisInput == nisLulus[2]));
+        System.out.println("nisInput == 1004? " + (nisInput == nisLulus[3]));
+        
+        System.out.println("--------------------------------------");
+        System.out.println("Operator logika yang digunakan:");
+        System.out.println("(nisInput == 1001) || (nisInput == 1002) ||");
+        System.out.println("(nisInput == 1003) || (nisInput == 1004)");
+        System.out.println("--------------------------------------");
+        System.out.println("Hasil perbandingan: " + lulus);
+        System.out.println("Status: " + (lulus ? "LULUS" : "TIDAK LULUS"));
+        System.out.println("======================================");
+    }
+}
