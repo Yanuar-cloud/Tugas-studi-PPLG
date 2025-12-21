@@ -1,0 +1,4 @@
+Apakah B > Z ? false
+Apakah B < Z ? true
+Apakah b == B ? false
+Apakah b > B ? true
