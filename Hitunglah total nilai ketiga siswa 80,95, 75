@@ -1,0 +1,74 @@
+public class OperatorAssignmentNilai {
+    public static void main(String[] args) {
+        System.out.println("========================================");
+        System.out.println("   PROGRAM HITUNG NILAI SISWA");
+        System.out.println("      MENGGUNAKAN OPERATOR ASSIGNMENT");
+        System.out.println("========================================\n");
+        
+        // Data nilai siswa
+        int siswa1 = 80;
+        int siswa2 = 95;
+        int siswa3 = 75;
+        
+        System.out.println("DATA NILAI SISWA:");
+        System.out.println("1. Siswa pertama  : " + siswa1);
+        System.out.println("2. Siswa kedua    : " + siswa2);
+        System.out.println("3. Siswa ketiga   : " + siswa3);
+        System.out.println();
+        
+        // PROSES PERHITUNGAN DENGAN OPERATOR ASSIGNMENT
+        
+        // 1. Inisialisasi variabel
+        int total = 0;
+        System.out.println("=== LANGKAH 1: INISIALISASI ===");
+        System.out.println("int total = 0;");
+        System.out.println("Nilai awal total: " + total);
+        System.out.println();
+        
+        // 2. Menjumlahkan nilai pertama
+        System.out.println("=== LANGKAH 2: MENAMBAHKAN NILAI PERTAMA ===");
+        System.out.println("Sebelum: total = " + total);
+        total += siswa1; // Operator assignment penjumlahan
+        System.out.println("Setelah: total += " + siswa1);
+        System.out.println("Sekarang total = " + total);
+        System.out.println();
+        
+        // 3. Menjumlahkan nilai kedua
+        System.out.println("=== LANGKAH 3: MENAMBAHKAN NILAI KEDUA ===");
+        System.out.println("Sebelum: total = " + total);
+        total += siswa2; // Operator assignment penjumlahan
+        System.out.println("Setelah: total += " + siswa2);
+        System.out.println("Sekarang total = " + total);
+        System.out.println();
+        
+        // 4. Menjumlahkan nilai ketiga
+        System.out.println("=== LANGKAH 4: MENAMBAHKAN NILAI KETIGA ===");
+        System.out.println("Sebelum: total = " + total);
+        total += siswa3; // Operator assignment penjumlahan
+        System.out.println("Setelah: total += " + siswa3);
+        System.out.println("Sekarang total = " + total);
+        System.out.println();
+        
+        // 5. Menghitung rata-rata
+        System.out.println("=== LANGKAH 5: MENGHITUNG RATA-RATA ===");
+        double average = total; // Konversi ke double untuk presisi desimal
+        System.out.println("double average = total; → average = " + average);
+        
+        average /= 3; // Operator assignment pembagian
+        System.out.println("average /= 3; → average = average / 3");
+        
+        // HASIL AKHIR
+        System.out.println("\n========================================");
+        System.out.println("            HASIL PERHITUNGAN");
+        System.out.println("========================================");
+        System.out.println("Total nilai 3 siswa: " + total);
+        System.out.printf("Rata-rata nilai   : %.2f\n", average);
+        System.out.println("========================================\n");
+        
+        // PENJELASAN OPERATOR ASSIGNMENT YANG DIGUNAKAN
+        System.out.println("=== PENJELASAN OPERATOR ASSIGNMENT ===");
+        System.out.println("1. total += nilai  →  total = total + nilai");
+        System.out.println("2. average /= 3    →  average = average / 3");
+        System.out.println("========================================");
+    }
+}
