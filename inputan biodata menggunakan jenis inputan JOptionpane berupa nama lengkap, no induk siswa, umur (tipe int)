@@ -1,0 +1,57 @@
+import javax.swing.JOptionPane;
+
+public class BiodataSiswa {
+    public static void main(String[] args) {
+        // Membuat dialog input untuk biodata
+        String namaLengkap = JOptionPane.showInputDialog(null, 
+            "Masukkan Nama Lengkap:", 
+            "Input Biodata", 
+            JOptionPane.QUESTION_MESSAGE);
+        
+        String nis = JOptionPane.showInputDialog(null, 
+            "Masukkan Nomor Induk Siswa (NIS):", 
+            "Input Biodata", 
+            JOptionPane.QUESTION_MESSAGE);
+        
+        String umurInput = JOptionPane.showInputDialog(null, 
+            "Masukkan Umur (dalam tahun):", 
+            "Input Biodata", 
+            JOptionPane.QUESTION_MESSAGE);
+        
+        // Validasi input tidak boleh kosong
+        if (namaLengkap == null || namaLengkap.trim().isEmpty() ||
+            nis == null || nis.trim().isEmpty() ||
+            umurInput == null || umurInput.trim().isEmpty()) {
+            
+            JOptionPane.showMessageDialog(null, 
+                "Semua data harus diisi!", 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Konversi umur ke tipe int dengan validasi
+        int umur;
+        try {
+            umur = Integer.parseInt(umurInput.trim());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, 
+                "Umur harus berupa angka!", 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Format output
+        String output = "=== BIODATA SISWA ===\n\n" +
+                       "Nama Lengkap: " + namaLengkap + "\n" +
+                       "NIS: " + nis + "\n" +
+                       "Umur: " + umur + " tahun";
+        
+        // Menampilkan output
+        JOptionPane.showMessageDialog(null, 
+            output, 
+            "Biodata Siswa", 
+            JOptionPane.INFORMATION_MESSAGE);
+    }
+}
