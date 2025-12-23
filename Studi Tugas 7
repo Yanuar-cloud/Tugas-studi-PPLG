@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class AngkaTerbesarMethod {
+    
+    // Method untuk menentukan angka terbesar
+    public static double cariTerbesar(double a, double b) {
+        return (a > b) ? a : b;
+    }
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("PROGRAM ANGKA TERBESAR");
+        System.out.print("Masukkan angka pertama: ");
+        double num1 = input.nextDouble();
+        
+        System.out.print("Masukkan angka kedua: ");
+        double num2 = input.nextDouble();
+        
+        double hasil = cariTerbesar(num1, num2);
+        
+        System.out.println("\nAngka yang dimasukkan: " + num1 + " dan " + num2);
+        System.out.println("Angka terbesar: " + hasil);
+        
+        if (num1 == num2) {
+            System.out.println("Catatan: Kedua angka sama besar");
+        }
+        
+        input.close();
+    }
+}
