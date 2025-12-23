@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class percabanganif {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int belanja;
+        
+        System.out.println("=== PROGRAM PEMBERIAN HADIAH TOKO ===");
+        System.out.println("Hadiah: Gantungan kunci untuk belanja minimal Rp 500.000");
+        System.out.println("=======================================");
+        
+        System.out.print("Inputkan total belanja Anda: Rp ");
+        belanja = input.nextInt();
+        
+        System.out.println("\n=======================================");
+        
+        if (belanja >= 500000) {
+            System.out.println("Selamat! Anda mendapatkan hadiah gantungan kunci");
+            System.out.println("Terima kasih atas belanja Anda!");
+        } else {
+            int selisihbelanja = 500000 - belanja;
+            System.out.println("Belanja anda kurang dari Rp. 500.000");
+            System.out.println("Silahkan tambah lagi belanjanya senilai Rp. " + selisihbelanja);
+            System.out.println("Agar bisa mendapatkan bonus gantungan kunci");
+        }
+        
+        System.out.println("=======================================");
+        input.close();
+    }
+}
