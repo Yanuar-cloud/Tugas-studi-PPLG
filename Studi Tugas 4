@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class HargaCelanaSwitch {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("PROGRAM HARGA CELANA");
+        System.out.print("Masukkan merk (ABC/DEF): ");
+        String merk = input.next().toUpperCase();
+        
+        System.out.print("Masukkan ukuran (26-34): ");
+        int ukuran = input.nextInt();
+        
+        // Penentuan harga menggunakan switch-case
+        int harga = 0;
+        
+        switch (merk) {
+            case "ABC":
+                if (ukuran >= 26 && ukuran <= 30) {
+                    harga = 160000;
+                } else if (ukuran >= 31 && ukuran <= 34) {
+                    harga = 180000;
+                } else {
+                    System.out.println("Ukuran tidak valid untuk merk ABC");
+                    return;
+                }
+                break;
+                
+            case "DEF":
+                if (ukuran >= 26 && ukuran <= 30) {
+                    harga = 210000;
+                } else if (ukuran >= 31 && ukuran <= 34) {
+                    harga = 220000;
+                } else {
+                    System.out.println("Ukuran tidak valid untuk merk DEF");
+                    return;
+                }
+                break;
+                
+            default:
+                System.out.println("Merk tidak tersedia");
+                return;
+        }
+        
+        System.out.println("\nHarga celana " + merk + " ukuran " + ukuran + 
+                         " adalah: Rp " + String.format("%,d", harga));
+        
+        input.close();
+    }
+}
