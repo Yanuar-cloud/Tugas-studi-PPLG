@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class MenuProgram {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("=== PROGRAM UTAMA ===");
+        System.out.println("Pilihan Menu:");
+        System.out.println("1. Penentuan Angka Terbesar");
+        System.out.println("2. Penentuan Angka Ganjil dan Genap");
+        System.out.println("================================");
+        
+        System.out.print("\nMasukkan pilihan Anda (1/2): ");
+        int pilihan = input.nextInt();
+        
+        System.out.println("\n================================");
+        
+        switch (pilihan) {
+            case 1:
+                // Program Penentuan Angka Terbesar (Tugas 7)
+                System.out.println("PROGRAM PENENTUAN ANGKA TERBESAR");
+                System.out.println("--------------------------------");
+                
+                System.out.print("Masukkan angka pertama: ");
+                double angka1 = input.nextDouble();
+                
+                System.out.print("Masukkan angka kedua: ");
+                double angka2 = input.nextDouble();
+                
+                System.out.println("\n--------------------------------");
+                
+                if (angka1 > angka2) {
+                    System.out.println("Hasil: " + angka1 + " > " + angka2);
+                    System.out.println("Angka terbesar adalah: " + angka1);
+                } 
+                else if (angka2 > angka1) {
+                    System.out.println("Hasil: " + angka2 + " > " + angka1);
+                    System.out.println("Angka terbesar adalah: " + angka2);
+                } 
+                else {
+                    System.out.println("Hasil: " + angka1 + " = " + angka2);
+                    System.out.println("Kedua angka sama besar");
+                }
+                break;
+                
+            case 2:
+                // Program Penentuan Ganjil Genap (Tugas 8)
+                System.out.println("PROGRAM PENENTUAN GANJIL DAN GENAP");
+                System.out.println("----------------------------------");
+                
+                System.out.print("Masukkan angka pertama: ");
+                int bil1 = input.nextInt();
+                
+                System.out.print("Masukkan angka kedua: ");
+                int bil2 = input.nextInt();
+                
+                System.out.println("\n----------------------------------");
+                
+                // Menentukan ganjil/genap untuk angka pertama
+                String status1 = (bil1 % 2 == 0) ? "GENAP" : "GANJIL";
+                
+                // Menentukan ganjil/genap untuk angka kedua
+                String status2 = (bil2 % 2 == 0) ? "GENAP" : "GANJIL";
+                
+                // Menampilkan hasil
+                System.out.println("HASIL ANALISIS:");
+                System.out.println("Angka " + bil1 + " adalah bilangan " + status1);
+                System.out.println("Angka " + bil2 + " adalah bilangan " + status2);
+                break;
+                
+            default:
+                System.out.println("ERROR: Pilihan tidak valid!");
+                System.out.println("Silahkan pilih 1 atau 2");
+        }
+        
+        System.out.println("================================");
+        System.out.println("Terima kasih telah menggunakan program ini!");
+        input.close();
+    }
+}
