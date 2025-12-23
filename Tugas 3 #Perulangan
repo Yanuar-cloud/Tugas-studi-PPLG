@@ -1,0 +1,8 @@
+public class DeretDescending {
+    public static void main(String[] args) {
+        System.out.println("Deret angka dari 50 sampai 1:");
+        for (int i = 50; i >= 1; i--) {
+            System.out.print(i + " ");
+        }
+    }
+}
