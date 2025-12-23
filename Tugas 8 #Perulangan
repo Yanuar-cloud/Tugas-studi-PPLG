@@ -1,0 +1,23 @@
+public class JanjiWhileLoop {
+    public static void main(String[] args) {
+        System.out.println("========================================");
+        System.out.println("    PROGRAM PENGULANGAN KALIMAT");
+        System.out.println("========================================\n");
+        
+        System.out.println("Menampilkan kalimat 10 kali:");
+        System.out.println("----------------------------");
+        
+        // Inisialisasi counter
+        int counter = 1;
+        
+        // Perulangan while
+        while (counter <= 10) {
+            System.out.println(counter + ". Saya berjanji tidak akan mengulangi kesalahan lagi");
+            counter++; // Increment counter
+        }
+        
+        System.out.println("\n========================================");
+        System.out.println("Selesai menampilkan 10 kali janji.");
+        System.out.println("========================================");
+    }
+}
