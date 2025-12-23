@@ -1,0 +1,67 @@
+public class DeretHuruf {
+    public static void main(String[] args) {
+        System.out.println("Deret huruf A sampai Z:");
+        System.out.println("=======================");
+        
+        // Cara 1: Menggunakan char langsung
+        System.out.println("\n1. Menggunakan char (A-Z):");
+        for (char huruf = 'A'; huruf <= 'Z'; huruf++) {
+            System.out.print(huruf + " ");
+        }
+        
+        System.out.println("\n\n2. Menggunakan char (Z-A):");
+        for (char huruf = 'Z'; huruf >= 'A'; huruf--) {
+            System.out.print(huruf + " ");
+        }
+        
+        // Cara 2: Menggunakan kode ASCII
+        System.out.println("\n\n3. Menggunakan kode ASCII (A-Z):");
+        // Kode ASCII: A=65, Z=90
+        for (int i = 65; i <= 90; i++) {
+            System.out.print((char)i + " ");
+        }
+        
+        System.out.println("\n\n4. Menggunakan kode ASCII (Z-A):");
+        for (int i = 90; i >= 65; i--) {
+            System.out.print((char)i + " ");
+        }
+        
+        // Cara 3: Dengan array karakter
+        System.out.println("\n\n5. Menggunakan array karakter:");
+        char[] alfabet = {'A','B','C','D','E','F','G','H','I','J','K','L','M',
+                         'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+        
+        System.out.print("A-Z: ");
+        for (char c : alfabet) {
+            System.out.print(c + " ");
+        }
+        
+        System.out.print("\nZ-A: ");
+        for (int i = alfabet.length - 1; i >= 0; i--) {
+            System.out.print(alfabet[i] + " ");
+        }
+        
+        // Menampilkan huruf kecil juga
+        System.out.println("\n\n6. Huruf kecil (a-z):");
+        for (char huruf = 'a'; huruf <= 'z'; huruf++) {
+            System.out.print(huruf + " ");
+        }
+        
+        // Menampilkan dengan format tabel
+        System.out.println("\n\n7. Format tabel (5 huruf per baris):");
+        int count = 0;
+        for (char huruf = 'A'; huruf <= 'Z'; huruf++) {
+            System.out.print(huruf + "  ");
+            count++;
+            if (count % 5 == 0) {
+                System.out.println();
+            }
+        }
+        
+        // Menampilkan kode ASCII setiap huruf
+        System.out.println("\n\n8. Kode ASCII setiap huruf:");
+        for (char huruf = 'A'; huruf <= 'Z'; huruf++) {
+            System.out.println(huruf + " -> " + (int)huruf);
+        }
+    }
+}
