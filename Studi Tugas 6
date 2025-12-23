@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class KodePlatKendaraan {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("=== KONVERSI KODE PLAT NOMOR KENDARAAN ===");
+        System.out.println("\nBeberapa contoh kode plat:");
+        System.out.println("A = Kota Bandung");
+        System.out.println("B = Kota Jakarta");
+        System.out.println("D = Kota Bandar Lampung");
+        System.out.println("E = Kota Surabaya");
+        System.out.println("F = Kota Bogor");
+        System.out.println("H = Kota Semarang");
+        System.out.println("L = Kota Cirebon");
+        System.out.println("P = Jember, Banyuwangi, Bondowoso, Situbondo");
+        System.out.println("R = Kota Banyumas");
+        System.out.println("===========================================");
+        
+        System.out.print("\nMasukkan kode plat (huruf): ");
+        String kode = input.next().toUpperCase(); // Konversi ke huruf besar
+        
+        System.out.println("\n===========================================");
+        
+        // Konversi kode plat menggunakan switch-case
+        switch (kode) {
+            case "A":
+                System.out.println("Kode Plat: " + kode);
+                System.out.println("Wilayah: Kota Bandung");
+                break;
+            case "B":
+                System.out.println("Kode Plat: " + kode);
+                System.out.println("Wilayah: Kota Jakarta");
+                break;
+            case "D":
+                System.out.println("Kode Plat: " + kode);
+                System.out.println("Wilayah: Kota Bandar Lampung");
+                break;
+            case "E":
+                System.out.println("Kode Plat: " + kode);
+                System.out.println("Wilayah: Kota Surabaya");
+                break;
+            case "F":
+                System.out.println("Kode Plat: " + kode);
+                System.out.println("Wilayah: Kota Bogor");
+                break;
+            case "H":
+                System.out.println("Kode Plat: " + kode);
+                System.out.println("Wilayah: Kota Semarang");
+                break;
+            case "L":
+                System.out.println("Kode Plat: " + kode);
+                System.out.println("Wilayah: Kota Cirebon");
+                break;
+            case "P":
+                System.out.println("Kode Plat: " + kode);
+                System.out.println("Wilayah: Jember, Banyuwangi, Bondowoso, Situbondo");
+                break;
+            case "R":
+                System.out.println("Kode Plat: " + kode);
+                System.out.println("Wilayah: Kota Banyumas");
+                break;
+            default:
+                System.out.println("Kode plat '" + kode + "' tidak dikenali");
+                System.out.println("Masukkan kode plat yang valid!");
+        }
+        
+        System.out.println("===========================================");
+        input.close();
+    }
+}
