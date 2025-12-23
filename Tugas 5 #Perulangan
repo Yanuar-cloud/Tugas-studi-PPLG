@@ -1,0 +1,56 @@
+public class DeretBilanganGanjil {
+    public static void main(String[] args) {
+        System.out.println("Deret bilangan ganjil antara 1-100:");
+        System.out.println("====================================");
+        
+        // Menggunakan for loop
+        System.out.println("\nMenggunakan for loop:");
+        for (int i = 1; i <= 100; i++) {
+            // Mengecek apakah bilangan ganjil (sisa bagi 2 = 1)
+            if (i % 2 == 1) {
+                System.out.print(i + " ");
+            }
+        }
+        
+        // Atau cara yang lebih efisien
+        System.out.println("\n\nCara langsung (langsung increment 2):");
+        for (int i = 1; i <= 100; i += 2) {
+            System.out.print(i + " ");
+        }
+        
+        // Dengan while loop
+        System.out.println("\n\nMenggunakan while loop:");
+        int j = 1;
+        while (j <= 100) {
+            if (j % 2 == 1) {
+                System.out.print(j + " ");
+            }
+            j++;
+        }
+        
+        // Menampilkan dalam format yang lebih rapi (10 angka per baris)
+        System.out.println("\n\nFormat rapi (10 angka per baris):");
+        int count = 0;
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 == 1) {
+                System.out.printf("%3d ", i);
+                count++;
+                
+                // Pindah baris setiap 10 angka
+                if (count % 10 == 0) {
+                    System.out.println();
+                }
+            }
+        }
+        
+        // Menghitung jumlah bilangan ganjil
+        System.out.println("\n\nJumlah bilangan ganjil antara 1-100:");
+        int jumlahGanjil = 0;
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 == 1) {
+                jumlahGanjil++;
+            }
+        }
+        System.out.println("Total: " + jumlahGanjil + " bilangan");
+    }
+}
