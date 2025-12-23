@@ -1,0 +1,11 @@
+flowchart TD
+    A([Mulai]) --> B["Input angka awal (n)"]
+    B --> C["Inisialisasi:<br>counter = 0, i = n + 1"]
+    C --> D{"counter < 10?"}
+    D -- Ya --> E{"i habis dibagi 3?<br>(i % 3 == 0)"}
+    E -- Ya --> F["Tampilkan i"]
+    F --> G["counter += 1<br>i += 1"]
+    G --> D
+    E -- Tidak --> H["i += 1"]
+    H --> D
+    D -- Tidak --> I([Selesai])
