@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class DeretPolaKhusus {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("=========================================");
+        System.out.println("PROGRAM DERET 3, 5, 8, 12, 17, 23, ...");
+        System.out.println("=========================================");
+        
+        System.out.print("Masukkan jumlah deret yang ingin ditampilkan: ");
+        int n = scanner.nextInt();
+        
+        System.out.println("\nDeret dengan " + n + " bilangan:");
+        System.out.println("--------------------------------");
+        
+        int angka = 3;  // Angka pertama dalam deret
+        int penambah = 2;  // Penambahan pertama
+        
+        for (int i = 1; i <= n; i++) {
+            // Tampilkan angka saat ini
+            System.out.print(angka);
+            
+            // Tambahkan koma kecuali untuk angka terakhir
+            if (i < n) {
+                System.out.print(", ");
+            }
+            
+            // Hitung angka berikutnya
+            angka = angka + penambah;
+            penambah++;  // Increment penambahan
+        }
+        
+        System.out.println();  // Pindah baris
+        
+        // Menampilkan penjelasan pola
+        System.out.println("\n=========================================");
+        System.out.println("PENJELASAN POLA:");
+        System.out.println("=========================================");
+        
+        // Reset nilai untuk penjelasan
+        angka = 3;
+        penambah = 2;
+        
+        for (int i = 1; i <= Math.min(n, 5); i++) {
+            int angkaSebelumnya = angka;
+            angka = angka + penambah;
+            
+            System.out.println("Angka ke-" + i + ": " + angkaSebelumnya);
+            System.out.println("  -> " + angkaSebelumnya + " + " + penambah + " = " + angka);
+            
+            penambah++;
+            
+            if (i < Math.min(n, 5)) {
+                System.out.println();
+            }
+        }
+        
+        if (n > 5) {
+            System.out.println("\n... dan seterusnya");
+        }
+        
+        scanner.close();
+    }
+}
