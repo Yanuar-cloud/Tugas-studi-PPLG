@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class HitungFaktorial {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("==================================");
+        System.out.println("   PROGRAM PENGHITUNG FAKTORIAL");
+        System.out.println("==================================");
+        
+        System.out.print("Masukkan bilangan untuk dihitung faktorialnya: ");
+        int angka = scanner.nextInt();
+        
+        // Validasi input
+        if (angka < 0) {
+            System.out.println("ERROR: Faktorial tidak terdefinisi untuk bilangan negatif!");
+        } else if (angka > 20) {
+            System.out.println("PERINGATAN: Nilai terlalu besar, mungkin overflow!");
+            System.out.print("Lanjutkan perhitungan? (y/n): ");
+            String lanjut = scanner.next();
+            
+            if (!lanjut.equalsIgnoreCase("y")) {
+                System.out.println("Program dihentikan.");
+                scanner.close();
+                return;
+            }
+        }
+        
+        System.out.println("\nPerhitungan faktorial dari " + angka + ":");
+        System.out.println("------------------------------------");
+        
+        // Menghitung faktorial
+        long faktorial = 1;
+        int counter = angka;
+        
+        // Menampilkan proses perhitungan
+        System.out.print(angka + "! = ");
+        
+        while (counter >= 1) {
+            System.out.print(counter);
+            faktorial *= counter;
+            
+            if (counter > 1) {
+                System.out.print(" × ");
+            } else {
+                System.out.print(" = ");
+            }
+            
+            counter--;
+        }
+        
+        System.out.println(faktorial);
+        
+        // Menampilkan hasil akhir
+        System.out.println("\n==================================");
+        System.out.println("HASIL: " + angka + "! = " + faktorial);
+        System.out.println("==================================");
+        
+        scanner.close();
+    }
+}
