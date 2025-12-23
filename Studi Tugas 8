@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class GanjilGenap {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("=== PROGRAM MENENTUKAN BILANGAN GANJIL & GENAP ===");
+        System.out.println("==================================================");
+        
+        // Input angka pertama
+        System.out.print("Masukkan angka pertama: ");
+        int angka1 = input.nextInt();
+        
+        // Input angka kedua
+        System.out.print("Masukkan angka kedua: ");
+        int angka2 = input.nextInt();
+        
+        System.out.println("\n==================================================");
+        
+        // Menentukan ganjil/genap untuk angka pertama
+        String status1 = (angka1 % 2 == 0) ? "GENAP" : "GANJIL";
+        
+        // Menentukan ganjil/genap untuk angka kedua
+        String status2 = (angka2 % 2 == 0) ? "GENAP" : "GANJIL";
+        
+        // Menampilkan hasil
+        System.out.println("Hasil Analisis:");
+        System.out.println("Angka " + angka1 + " adalah bilangan " + status1);
+        System.out.println("Angka " + angka2 + " adalah bilangan " + status2);
+        
+        System.out.println("\n==================================================");
+        input.close();
+    }
+}
