@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class DeretFibonacci {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Masukkan jumlah deret Fibonacci: ");
+        int jumlahDeret = input.nextInt();
+
+        System.out.print("Output: ");
+
+        // Inisialisasi dua angka awal
+        int angkaPertama = 0;
+        int angkaKedua = 1;
+        
+        int i = 1;
+
+        if (jumlahDeret > 0) {
+            do {
+                // Sesuai contoh output: kita cetak angka kedua (dimulai dari 1)
+                System.out.print(angkaKedua + " ");
+
+                // Menghitung angka berikutnya
+                int angkaBerikutnya = angkaPertama + angkaKedua;
+                
+                // Geser nilai untuk baris berikutnya
+                angkaPertama = angkaKedua;
+                angkaKedua = angkaBerikutnya;
+
+                i++;
+            } while (i <= jumlahDeret);
+        } else {
+            System.out.println("Jumlah deret harus lebih dari 0");
+        }
+
+        System.out.println();
+        input.close();
+    }
+}
