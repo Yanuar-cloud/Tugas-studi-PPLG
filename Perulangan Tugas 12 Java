@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class MenuAplikasi {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int pilihan;
+
+        do {
+            // Menampilkan menu
+            System.out.println("\n=== PILIHAN MENU ===");
+            System.out.println("1. Penjumlahan");
+            System.out.println("2. Pengurangan");
+            System.out.println("3. Keluar");
+            System.out.print("Masukkan pilihan Anda (1-3): ");
+            
+            // Mengambil input pilihan dari user
+            pilihan = input.nextInt();
+
+            // Memproses pilihan menggunakan switch-case
+            switch (pilihan) {
+                case 1:
+                    System.out.println("Anda memilih menu PENJUMLAHAN");
+                    break;
+                case 2:
+                    System.out.println("Anda memilih menu PENGURANGAN");
+                    break;
+                case 3:
+                    System.out.println("Program berhenti!");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid! Silakan pilih menu 1, 2, atau 3.");
+                    break;
+            }
+
+        } while (pilihan != 3); // Perulangan akan berhenti jika pilihan bernilai 3
+
+        input.close();
+    }
+}
