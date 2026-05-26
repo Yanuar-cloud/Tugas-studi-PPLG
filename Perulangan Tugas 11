@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class DeretGanjilGenap {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Meminta input dari user
+        System.out.print("Masukkan panjang deret: ");
+        int panjangDeret = input.nextInt();
+
+        // 1. Menampilkan Bilangan GANJIL
+        System.out.print("● Bilangan GANJIL: ");
+        int i = 1;
+        if (panjangDeret >= 1) {
+            do {
+                if (i % 2 != 0) {
+                    System.out.print(i + " ");
+                }
+                i++;
+            } while (i <= panjangDeret);
+        }
+        System.out.println();
+
+        // 2. Menampilkan Bilangan GENAP
+        System.out.print("● Bilangan GENAP: ");
+        int j = 1;
+        if (panjangDeret >= 2) {
+            do {
+                if (j % 2 == 0) {
+                    System.out.print(j + " ");
+                }
+                j++;
+            } while (j <= panjangDeret);
+        }
+        System.out.println();
+
+        input.close();
+    }
+}
