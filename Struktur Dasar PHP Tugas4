@@ -1,0 +1,26 @@
+<?php
+echo "<h3>Program Menghitung Sisi Miring Segitiga Siku-Siku</h3>";
+echo "<hr>";
+
+// Tentukan nilai alas (a) dan tinggi (b)
+$alas = 6;
+$tinggi = 8;
+
+// Hitung kuadrat dari masing-masing sisi
+$kuadrat_alas = pow($alas, 2);      // sama dengan $alas * $alas
+$kuadrat_tinggi = pow($tinggi, 2);  // sama dengan $tinggi * $tinggi
+
+// Rumus Pythagoras: c = akar(a^2 + b^2)
+$sisi_miring = sqrt($kuadrat_alas + $kuadrat_tinggi);
+
+// Tampilkan data dan hasil
+echo "Diketahui:<br>";
+echo "- Sisi Alas = " . $alas . " cm<br>";
+echo "- Sisi Tinggi = " . $tinggi . " cm<br><br>";
+
+echo "<b>Hasil Perhitungan:</b><br>";
+echo "Sisi Miring = &radic;(" . $alas . "<sup>2</sup> + " . $tinggi . "<sup>2</sup>)<br>";
+echo "Sisi Miring = &radic;(" . $kuadrat_alas . " + " . $kuadrat_tinggi . ")<br>";
+echo "Sisi Miring = &radic;" . ($kuadrat_alas + $kuadrat_tinggi) . "<br>";
+echo "Sisi Miring = <b>" . $sisi_miring . " cm</b>";
+?>
