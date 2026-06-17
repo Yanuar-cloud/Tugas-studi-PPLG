@@ -1,0 +1,30 @@
+<?php
+echo "<h3>Program Perhitungan Segitiga Siku-Siku Lengkap</h3>";
+echo "<hr>";
+
+// 1. Inisialisasi data komponen dasar segitiga
+$alas = 6;      // Sisi penyiku mendatar (a)
+$tinggi = 8;    // Sisi penyiku tegak (b)
+
+// 2. Hitung Sisi Miring (c) dengan Teorema Pythagoras
+// Rumus: c = akar(a^2 + b^2)
+$sisi_miring = sqrt(pow($alas, 2) + pow($tinggi, 2));
+
+// 3. Hitung Luas Segitiga
+// Rumus: L = 1/2 * alas * tinggi
+$luas = 0.5 * $alas * $tinggi;
+
+// 4. Hitung Keliling Segitiga
+// Rumus: K = alas + tinggi + sisi_miring
+$keliling = $alas + $tinggi + $sisi_miring;
+
+// 5. Tampilkan Informasi Input dan Hasil Eksekusi
+echo "<b>Diketahui:</b><br>";
+echo "- Sisi Alas (a) = " . $alas . " cm<br>";
+echo "- Sisi Tinggi (b) = " . $tinggi . " cm<br><br>";
+
+echo "<b>Hasil Perhitungan:</b><br>";
+echo "1. Sisi Miring (c) = &radic;(" . $alas . "<sup>2</sup> + " . $tinggi . "<sup>2</sup>) = <b>" . $sisi_miring . " cm</b><br>";
+echo "2. Luas Segitiga = &frac12; &times; alas &times; tinggi = <b>" . $luas . " cm<sup>2</sup></b><br>";
+echo "3. Keliling Segitiga = alas + tinggi + sisi miring = " . $alas . " + " . $tinggi . " + " . $sisi_miring . " = <b>" . $keliling . " cm</b>";
+?>
