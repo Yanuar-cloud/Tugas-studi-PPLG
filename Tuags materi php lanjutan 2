@@ -1,0 +1,23 @@
+Dalam pemrograman PHP, keempat fungsi tersebut (include, include_once, require, dan require_once) digunakan untuk menyisipkan file PHP lain ke dalam file yang sedang kita buat.
+
+Meskipun tujuannya sama, ada dua perbedaan besar yang membedakan mereka, yaitu tingkat penanganan error dan jumlah pemanggilan file.
+
+Berikut adalah penjelasan perbedaannya dengan gaya bahasa yang santai dan mudah dipahami:
+
+1. Perbedaan Utama: "Gagal Berhenti" vs "Gagal Lanjut"
+Perbedaan paling mendasar antara kelompok require dan include terletak pada apa yang terjadi jika file yang dipanggil tidak ditemukan atau rusak.
+
+include (Sifatnya Santai/Lembek): Jika file yang dipanggil tidak ada, PHP hanya akan mengeluarkan peringatan berupa Warning. Program di bawahnya akan tetap terus berjalan sampai selesai.
+
+Analogi: Seperti lupa membawa topi saat sekolah, kamu ditegur guru tapi tetap boleh ikut pelajaran sampai pulang.
+
+require (Sifatnya Tegas/Wajib): Sesuai namanya (require = butuh/wajib). Jika file yang dipanggil tidak ditemukan, PHP akan langsung mengeluarkan error fatal (Fatal Error) dan menghentikan seluruh program saat itu juga.
+
+Analogi: Seperti lupa membawa kartu ujian, kamu langsung disuruh pulang dan tidak boleh ikut ujian sama sekali.
+
+2. Perbedaan Tambahan: Pakai _once vs Tanpa _once
+Kata once berarti "sekali". Ini mengatur berapa kali file yang sama boleh disisipkan dalam satu halaman.
+
+Tanpa _once (include & require): Setiap kali kamu menuliskan perintah ini, PHP akan membaca dan menyisipkan file tersebut berulang-ulang tanpa peduli jika file itu sudah pernah dipanggil sebelumnya. Ini berisiko memicu error jika di dalam file tersebut terdapat fungsi yang dideklarasikan ulang.
+
+Pakai _once (include_once & require_once): PHP akan mendeteksi dan mengecek terlebih dahulu. Jika file tersebut sudah pernah dipanggil sebelumnya di baris atas, maka panggilan yang kedua dan seterusnya akan diabaikan agar tidak terjadi duplikasi.
