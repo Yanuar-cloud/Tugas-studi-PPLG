@@ -1,0 +1,22 @@
+<?php
+// Mengatur zona waktu agar sesuai dengan waktu lokal Indonesia (WIB)
+date_default_timezone_set("Asia/Jakarta");
+
+echo "<h1>Selamat Datang</h1>";
+
+// Fungsi date() dengan format tertentu untuk menghasilkan: 27 Jul 23 15:37 pm
+// d = Tanggal (dua digit)
+// M = Nama bulan tiga huruf (Jul, Aug, dll)
+// y = Tahun dua digit terakhir (23)
+// H = Jam format 24 jam (15)
+// i = Menit (37)
+// a = penanda am/pm huruf kecil
+$tanggal_sekarang = date("d M y H:i a");
+
+echo "Hari Ini Tanggal : " . $tanggal_sekarang;
+?>
+
+Hasil kode program:
+Selamat Datang
+
+Hari Ini Tanggal : 27 Jul 23 15:37 pm
