@@ -1,0 +1,16 @@
+<form action="soalhandlin1tampil.php" method="get">
+    <label>Masukkan Nama</label><br/>
+    <input type="text" name="nama"><br/>
+    <label>Masukkan Usia</label><br/>
+    <input type="text" name="usia"><br/>
+    <input type="submit" value="oke">
+</form>
+
+<?php
+$nama = $_GET['nama'];
+$usia = $_GET['usia']; // Menangkap data usia yang dikirim dari form
+
+echo "Selamat datang " . $nama;
+echo "<br/>";
+echo "Usia anda sekarang adalah " . $usia;
+?>
