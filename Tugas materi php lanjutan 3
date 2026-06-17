@@ -1,0 +1,6 @@
+<?php
+// Menggunakan echo untuk menuliskan tag <script> JavaScript di dalam PHP
+echo "<script>
+    alert('Apakah anda bisa membuat ini?');
+</script>";
+?>
