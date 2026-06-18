@@ -1,0 +1,26 @@
+Meskipun namanya mirip dan sama-sama digunakan untuk bekerja dengan database MySQL di pemrograman PHP, MySQL (ekstensi lama/asli) dan MySQLi (singkatan dari MySQL Improved) memiliki perbedaan yang sangat besar dari segi fitur, keamanan, dan performa.
+
+Secara singkat, MySQLi adalah versi modern dan penyempurnaan dari ekstensi MySQL lama yang kini sudah usang (deprecated).
+
+
+1. Gaya Pemrograman (Paradigma)
+MySQL: Hanya mendukung gaya pemrograman Prosedural (fungsi yang ditulis berurutan seperti mysql_connect(), mysql_query()).
+
+MySQLi: Mendukung dua gaya sekaligus, yaitu Prosedural (misalnya mysqli_connect()) dan Object-Oriented Programming (OOP) (misalnya $mysqli = new mysqli()). Pendekatan OOP ini membuat kode program menjadi lebih rapi dan mudah dikelola untuk proyek skala besar.
+
+2. Keamanan (Prepared Statements)
+Ini adalah perbedaan yang paling krusial.
+
+MySQL: Tidak mendukung Prepared Statements. Untuk mengamankan data dari serangan siber, developer harus menyaring input secara manual menggunakan fungsi seperti mysql_real_escape_string().
+
+MySQLi: Sudah mendukung Prepared Statements secara bawaan. Fitur ini memisahkan antara kueri SQL dan data yang dimasukkan pengguna, sehingga secara otomatis menangkal celah keamanan berbahaya seperti SQL Injection.
+
+3. Dukungan Versi PHP
+MySQL: Digunakan pada PHP versi lama (PHP 4 dan PHP 5). Ekstensi ini sudah dihapus sepenuhnya sejak PHP 7. Jika Anda menjalankan fungsi mysql_connect() di PHP versi modern, aplikasi akan langsung error.
+
+MySQLi: Diperkenalkan sejak PHP 5 untuk mengimbangi fitur-fitur baru pada MySQL Server versi 4.1.3 ke atas, dan menjadi standar utama di PHP 7, PHP 8, hingga versi terbaru saat ini.
+
+4. Kecepatan dan Performa
+MySQL: Lebih lambat karena tidak memiliki optimasi eksekusi kueri berulang.
+
+MySQLi: Jauh lebih cepat dan efisien. Dengan adanya Prepared Statements, kueri yang sama yang dijalankan berulang kali (misalnya saat memasukkan ratusan data sekaligus) hanya perlu dikompilasi sekali oleh server database, sehingga menghemat konsumsi memori dan waktu eksekusi.
