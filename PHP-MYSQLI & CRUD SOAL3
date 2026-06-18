@@ -1,0 +1,20 @@
+-- 1. Membuat Database dataobat
+CREATE DATABASE IF NOT EXISTS dataobat;
+USE dataobat;
+
+-- 2. Membuat Tabel obat sesuai ketentuan gambar
+CREATE TABLE IF NOT EXISTS obat (
+    kode_obat INT(225) NOT NULL AUTO_INCREMENT,
+    nama_obat VARCHAR(225) NOT NULL,
+    stok INT(225) NOT NULL,
+    harga INT(225) NOT NULL,
+    PRIMARY KEY (kode_obat)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 3. Memasukkan 5 Data Obat Sampel
+INSERT INTO obat (nama_obat, stok, harga) VALUES
+('Paracetamol 500mg', 150, 5000),
+('Amoxicillin 500mg', 80, 12000),
+('Ibuprofen 400mg', 120, 8000),
+('Cetirizine 10mg', 200, 6000),
+('Vitamin C 1000mg', 300, 15000);
