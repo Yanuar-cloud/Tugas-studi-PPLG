@@ -1,0 +1,33 @@
+perbedaan antara front-end dan back-end adalah tentang apa yang dilihat oleh pengguna dan apa yang bekerja di balik layar.
+
+Ibarat sebuah restoran, front-end adalah ruang makan tempat tamu duduk dan melihat menu, sedangkan back-end adalah dapur tempat makanan dimasak dan bahan-bahan disimpan.
+
+Berikut adalah penjelasan detail perbedaannya:
+
+1. Front-End (Sisi Klien / Client-Side)
+Front-end adalah bagian dari website atau aplikasi yang berinteraksi langsung dengan pengguna. Semua yang Anda lihat, klik, atau gunakan di layar komputer atau HP adalah hasil kerja front-end developer.
+
+Tugas Utama: Memastikan website terlihat bagus, responsif (rapi saat dibuka di HP maupun laptop), dan mudah digunakan.
+
+Elemen yang Diurus: Desain tata letak (layout), tombol, warna, teks, gambar, grafik, dan menu navigasi.
+
+Teknologi/Bahasa Pemrograman Utama:
+
+HTML: Membantu membuat struktur dasar website (seperti tulang).
+
+CSS: Mengatur gaya, warna, dan tampilan agar menarik (seperti baju dan riasan).
+
+JavaScript: Membuat website menjadi interaktif, seperti animasi atau munculnya pop-up (seperti sistem saraf yang menggerakkan tubuh).
+
+2. Back-End (Sisi Server / Server-Side)
+Back-end adalah bagian "di balik layar" yang tidak dilihat oleh pengguna, tetapi fungsinya sangat krusial. Bagian ini bertanggung jawab untuk mengolah data dan memastikan logika aplikasi berjalan dengan benar.
+
+Tugas Utama: Mengelola database, mengatur keamanan, memproses permintaan dari front-end, dan menjalankan logika bisnis (misalnya menghitung total belanjaan atau memverifikasi password).
+
+Elemen yang Diurus: Server, database (tempat menyimpan data pengguna), API (Application Programming Interface), dan sistem keamanan.
+
+Teknologi/Bahasa Pemrograman Utama:
+
+PHP, Python, Node.js (JavaScript), Java, atau Ruby.
+
+Database: MySQL, PostgreSQL, atau MongoDB (untuk menyimpan data seperti username, password, dan riwayat transaksi).
