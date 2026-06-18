@@ -1,0 +1,3 @@
+CRUD—singkatan dari Create, Read, Update, dan Delete—adalah empat fungsi dasar yang wajib dimiliki ketika kita berinteraksi dengan database relasional.
+
+Secara garis besar, CRUD sangat penting karena merupakan fondasi utama dari siklus hidup data (data lifecycle) dalam hampir semua aplikasi modern. Tanpa adanya fungsi-fungsi ini, sebuah sistem database tidak akan bisa berfungsi secara interaktif dengan pengguna.
