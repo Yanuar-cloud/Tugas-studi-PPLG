@@ -1,0 +1,168 @@
+a.index.php
+<?php 
+include 'koneksi.php'; 
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Data Obat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #0d9488;">
+            <h4 class="mb-0 text-white">Stok Gudang Obat (Apotek)</h4>
+            <a href="tambah.php" class="btn btn-light btn-sm fw-bold text-teal" style="color: #0d9488;">+ Tambah Obat Baru</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th width="12%" class="text-center">Kode Obat</th>
+                            <th>Nama Obat</th>
+                            <th width="15%" class="text-center">Stok</th>
+                            <th width="20%">Harga Satuan</th>
+                            <th width="20%" class="text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $query = mysqli_query($koneksi, "SELECT * FROM obat ORDER BY kode_obat DESC");
+                        if(mysqli_num_rows($query) == 0) {
+                            echo "<tr><td colspan='5' class='text-center text-muted'>Belum ada data obat.</td></tr>";
+                        } else {
+                            while($data = mysqli_fetch_array($query)) {
+                            ?>
+                            <tr>
+                                <td class="fw-bold text-center text-secondary">#<?= $data['kode_obat']; ?></td>
+                                <td class="fw-bold text-dark"><?= $data['nama_obat']; ?></td>
+                                <td class="text-center">
+                                    <span class="badge <?= $data['stok'] > 10 ? 'bg-success' : 'bg-danger'; ?> px-3 py-2">
+                                        <?= $data['stok']; ?> Pcs
+                                    </span>
+                                </td>
+                                <td class="text-success fw-bold">Rp <?= number_format($data['harga'], 0, ',', '.'); ?></td>
+                                <td class="text-center">
+                                    <div class="d-flex gap-2 justify-content-center">
+                                        <a href="edit.php?id=<?= $data['kode_obat']; ?>" class="btn btn-warning btn-sm fw-bold text-white px-3">Ubah</a>
+                                        <a href="hapus.php?id=<?= $data['kode_obat']; ?>" class="btn btn-danger btn-sm fw-bold px-3" onclick="return confirm('Apakah Anda yakin ingin menghapus obat ini dari gudang?')">Hapus</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php 
+                            }
+                        } 
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+b.edit.php
+<?php
+include 'koneksi.php';
+
+// Mengambil kode_obat dari parameter URL
+$id = $_GET['id'];
+
+// Mengambil data obat yang sesuai dari database
+$query = mysqli_query($koneksi, "SELECT * FROM obat WHERE kode_obat = '$id'");
+$data = mysqli_fetch_array($query);
+
+if (mysqli_num_rows($query) < 1) {
+    die("Data obat tidak ditemukan.");
+}
+
+// Eksekusi ketika tombol simpan perubahan diklik
+if (isset($_POST['update'])) {
+    $nama  = $_POST['nama_obat'];
+    $stok  = $_POST['stok'];
+    $harga = $_POST['harga'];
+
+    $update = mysqli_query($koneksi, "UPDATE obat SET nama_obat='$nama', stok='$stok', harga='$harga' WHERE kode_obat='$id'");
+
+    if ($update) {
+        echo "<script>alert('Data obat berhasil diperbarui!'); window.location='index.php';</script>";
+    } else {
+        echo "<script>alert('Gagal memperbarui data obat.');</script>";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah Data Obat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5" style="max-width: 550px;">
+    <div class="card shadow-sm">
+        <div class="card-header text-white" style="background-color: #d97706;">
+            <h4 class="mb-0">Form Ubah Data Obat</h4>
+        </div>
+        <div class="card-body">
+            <form action="" method="POST">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Kode Obat (Permanen)</label>
+                    <input type="text" class="form-control bg-body-secondary fw-bold" value="#<?= $data['kode_obat']; ?>" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Nama Obat</label>
+                    <input type="text" name="nama_obat" class="form-control" value="<?= $data['nama_obat']; ?>" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Jumlah Stok terbaru</label>
+                    <input type="number" name="stok" class="form-control" value="<?= $data['stok']; ?>" min="0" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Harga Jual Baru (Rp)</label>
+                    <div class="input-group">
+                        <span class="input-group-text">Rp</span>
+                        <input type="number" name="harga" class="form-control" value="<?= $data['harga']; ?>" min="0" required>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-end gap-2">
+                    <a href="index.php" class="btn btn-secondary">Batal</a>
+                    <button type="submit" name="update" class="btn text-white fw-bold" style="background-color: #d97706;">Simpan Perubahan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+c.hapus.php
+<?php
+include 'koneksi.php';
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    // Perintah SQL menghapus data berdasarkan kode_obat
+    $delete = mysqli_query($koneksi, "DELETE FROM obat WHERE kode_obat = '$id'");
+
+    if ($delete) {
+        echo "<script>alert('Obat berhasil dihapus dari sistem!'); window.location='index.php';</script>";
+    } else {
+        echo "<script>alert('Gagal menghapus data obat.'); window.location='index.php';</script>";
+    }
+} else {
+    header("Location: index.php");
+}
+?>
