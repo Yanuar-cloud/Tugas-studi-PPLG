@@ -1,0 +1,44 @@
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class BukuController extends Controller
+{
+    // Method index menampilkan halaman welcome
+    public function index()
+    {
+        return view('welcome');
+    }
+
+    // Method tampil menampilkan koleksi buku
+    public function tampil()
+    {
+        $buku = [
+            [
+                'judul' => 'Laskar Pelangi',
+                'pengarang' => 'Andrea Hirata'
+            ],
+            [
+                'judul' => 'Bumi',
+                'pengarang' => 'Tere Liye'
+            ],
+            [
+                'judul' => 'Negeri 5 Menara',
+                'pengarang' => 'Ahmad Fuadi'
+            ],
+            [
+                'judul' => 'Perahu Kertas',
+                'pengarang' => 'Dee Lestari'
+            ],
+            [
+                'judul' => 'Bulan',
+                'pengarang' => 'Tere Liye'
+            ]
+        ];
+
+        return view('buku')->with('buku', $buku);
+    }
+}
