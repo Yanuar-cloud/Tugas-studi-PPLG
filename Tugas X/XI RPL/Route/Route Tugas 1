@@ -1,0 +1,20 @@
+
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('perpustakaan')->group(function () {
+
+    Route::get('/buku', function () {
+        return 'Halaman Buku Perpustakaan';
+    });
+
+    Route::get('/anggota', function () {
+        return 'Halaman Anggota Perpustakaan';
+    });
+
+    Route::get('/peminjaman', function () {
+        return 'Halaman Peminjaman Perpustakaan';
+    });
+
+});
