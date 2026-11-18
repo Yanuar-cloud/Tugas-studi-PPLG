@@ -1,0 +1,26 @@
+-- Membuat VIEW peminjaman aktif
+--bisa dijalanin di phpMyAdmin atau MySQL
+CREATE VIEW view_peminjaman_aktif AS
+SELECT
+    p.id_peminjaman,
+    p.id_siswa,
+    s.nama_siswa,
+    p.tgl_pinjam,
+    p.tgl_kembali,
+    p.status
+FROM peminjaman AS p
+JOIN siswa AS s
+    ON p.id_siswa = s.id_siswa
+WHERE p.status = 'Belum Dikembalikan';
+
+
+-- Menampilkan data dari VIEW
+SELECT * FROM view_peminjaman_aktif;
+
+--hasil yg akan keluar
++---------------+-----------+------------+------------+-------------+----------------------+
+| id_peminjaman | id_siswa  | nama_siswa | tgl_pinjam | tgl_kembali | status               |
++---------------+-----------+------------+------------+-------------+----------------------+
+| PM001         | S001      | Andi       | 2026-11-15 | 2026-11-17  | Belum Dikembalikan   |
+| PM002         | S003      | Budi       | 2026-11-16 | 2026-11-18  | Belum Dikembalikan   |
++---------------+-----------+------------+------------+-------------+----------------------+

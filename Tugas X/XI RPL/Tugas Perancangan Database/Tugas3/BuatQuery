@@ -1,0 +1,17 @@
+//Query membuat index
+
+CREATE INDEX idx_nama_alat
+ON alat (nama_alat);
+
+//Setelah index dibuat, lakuin pencarian data alat berdasarkan nama alat.
+
+SELECT *
+FROM alat
+WHERE nama_alat = 'Mikroskop';
+
+Kolom nama_alat cocok dijadikan index karena:
+1. Mempermudah pencarian data: Nama alat sering digunakan untuk mencari alat tertentu, seperti mikroskop, tabung reaksi, dan gelas ukur.
+2. Mempercepat proses pencarian: Index membantu database menemukan data tanpa harus memeriksa seluruh baris tabel.
+3. Mendukung pencarian berdasarkan nama: Kolom nama alat dapat digunakan dalam kondisi WHERE maupun pengurutan ORDER BY.
+4. Mengapa Tidak Menggunakan id_alat?
+Kolom id_alat sebenarnya juga cocok dijadikan index. Bahkan, jika id_alat merupakan Primary Key, database biasanya sudah membuat index secara otomatis.

@@ -1,0 +1,54 @@
+
++------------------+       +----------------------+
+|    PEMINJAMAN    | 1---1 |     PENGEMBALIAN     |
++------------------+       +----------------------+
+| PK id_peminjaman |       | PK id_pengembalian   |
+| FK id_siswa      |       | FK id_peminjaman     |
+| tgl_pinjam       |       | tgl_kembali          |
+| status           |       | kondisi_alat         |
++------------------+       +----------------------+
+One to One 
+Pengertian: Satu data pada entitas pertama hanya berhubungan dengan satu data pada entitas kedua, begitu juga sebaliknya.
+
+Contoh kasus: Satu peminjaman memiliki satu catatan pengembalian, dan satu catatan pengembalian hanya dimiliki oleh satu peminjaman.
+
++------------------+       +----------------------+
+|      SISWA       | 1---N |      PEMINJAMAN      |
++------------------+       +----------------------+
+| PK id_siswa      |       | PK id_peminjaman     |
+| nama_siswa       |       | FK id_siswa          |
+| kelas            |       | tgl_pinjam           |
+| jurusan          |       | tgl_kembali          |
++------------------+       | status               |
+                           +----------------------+
+One to Many
+Pengertian: Satu data pada entitas pertama dapat berhubungan dengan banyak data pada entitas kedua, tetapi satu data pada entitas kedua hanya berhubungan dengan satu data pada entitas pertama.
+
+Contoh kasus: Satu siswa dapat melakukan banyak transaksi peminjaman alat laboratorium, tetapi satu transaksi peminjaman hanya dimiliki oleh satu siswa.            
+
++------------------+       +----------------------+
+|    PEMINJAMAN    | 1---N |  DETAIL_PEMINJAMAN   |
++------------------+       +----------------------+
+| PK id_peminjaman |       | PK, FK id_peminjaman |
+| FK id_siswa      |       | PK, FK id_alat       |
+| tgl_pinjam       |       | jumlah               |
+| status           |       | kondisi_saat_pinjam  |
++------------------+       +----------------------+
+                                      |
+                                      | N
+                                      |
+                                      | 1
+                           +----------------------+
+                           |         ALAT         |
+                           +----------------------+
+                           | PK id_alat           |
+                           | nama_alat            |
+                           | jumlah_stok          |
+                           | kondisi              |
+                           +----------------------+
+                           Many to Many
+Pengertian: Banyak data pada entitas pertama dapat berhubungan dengan banyak data pada entitas kedua.
+
+Contoh kasus: Satu transaksi peminjaman dapat berisi banyak alat laboratorium, dan satu jenis alat dapat dipinjam dalam banyak transaksi peminjaman.
+
+Untuk membuat relasi Many to Many, diperlukan tabel penghubung (junction table), yaitu Detail_Peminjaman.
